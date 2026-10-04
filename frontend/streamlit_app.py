@@ -834,7 +834,6 @@ for idx, q_text in enumerate(DEMO_QUESTIONS[:9]):
     short_label = f"{'📌' if idx == 0 else '🔎'} {q_text[:50]}..."
     if col.button(short_label, key=f"demo_{idx}", help=q_text, use_container_width=True):
         st.session_state["business_query_input"] = q_text
-        st.session_state["pending_query"] = q_text
         st.session_state.pop("report_data", None)
         st.session_state["trigger_analysis"] = True
         st.rerun()
@@ -860,8 +859,7 @@ should_run = run_button or st.session_state.pop("trigger_analysis", False)
 
 if should_run or "report_data" in st.session_state:
     if should_run:
-        actual_query = st.session_state.pop("pending_query", None) or st.session_state.get("business_query_input") or user_query
-        st.session_state["business_query_input"] = actual_query
+        actual_query = user_query
         st.session_state.pop("report_data", None)
         with st.status("🧠 Multi-Agent Analytics Pipeline Running...", expanded=True) as status:
             st.markdown("""
