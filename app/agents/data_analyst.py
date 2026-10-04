@@ -327,22 +327,25 @@ class DataAnalystAgent:
                 tool_results.append({"tool": "rfm_segmentation", "output": rfm_res})
                 charts_recommended.append("rfm_treemap")
 
+                tot_cust = q_cust.get("total_customers", q_cust.get("active_registered_customers", 0))
+                rep_rate = q_cust.get("repeat_customer_rate_pct", 0.0)
+
                 ev_rfm = f"EV-CALC-{len(evidence_list)+1:02d}"
                 evidence_list.append({
                     "id": ev_rfm,
                     "source": source_label,
                     "source_type": "data_calculation",
-                    "details": f"Repeat Customer Rate: {q_cust['repeat_customer_rate_pct']}%, Total Customers: {q_cust['total_customers']:,}",
+                    "details": f"Repeat Customer Rate: {rep_rate}%, Total Customers: {tot_cust:,}",
                     "calculation": f"customer_metrics(period='{target_period}')",
                 })
                 findings.append({
                     "title": "Customer Retention & Repeat Dynamics",
                     "statement": (
-                        f"Active customer base reached {q_cust['total_customers']:,} accounts with a repeat purchase rate of "
-                        f"{q_cust['repeat_customer_rate_pct']}% during {target_period or 'the reporting period'}."
+                        f"Active customer base reached {tot_cust:,} accounts with a repeat purchase rate of "
+                        f"{rep_rate}% during {target_period or 'the reporting period'}."
                     ),
                     "metric": "Repeat Purchase Rate",
-                    "value": f"{q_cust['repeat_customer_rate_pct']}%",
+                    "value": f"{rep_rate}%",
                     "evidence_ids": [ev_rfm],
                     "confidence": "High",
                     "classification": "fact",

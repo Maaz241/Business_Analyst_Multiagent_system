@@ -415,6 +415,7 @@ def customer_metrics(
 
     return {
         "period": period or "All Time",
+        "total_customers": total_active_cust,
         "active_registered_customers": total_active_cust,
         "repeat_customers_count": repeat_cust_count,
         "repeat_customer_rate_pct": round(repeat_rate, 2),
