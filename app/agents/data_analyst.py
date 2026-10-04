@@ -132,13 +132,16 @@ class DataAnalystAgent:
                 chg_pct = comp_geo.get("revenue_change_pct", 0.0)
                 direction = "decline" if chg_abs < 0 else "growth"
 
+                base_r = comp_geo.get("base_revenue", 0.0)
+                targ_r = comp_geo.get("target_revenue", 0.0)
+
                 evidence_list.append({
                     "id": ev_id_1,
                     "source": source_label,
                     "source_type": "data_calculation",
                     "details": (
-                        f"{base_period} Revenue: {format_currency(comp_geo['base_revenue'])}, "
-                        f"{target_period} Revenue: {format_currency(comp_geo['target_revenue'])}, "
+                        f"{base_period} Revenue: {format_currency(base_r)}, "
+                        f"{target_period} Revenue: {format_currency(targ_r)}, "
                         f"Absolute Change: {format_currency(chg_abs)}, "
                         f"Growth: {format_percent(chg_pct)}"
                     ),
@@ -148,8 +151,8 @@ class DataAnalystAgent:
                 findings.append({
                     "title": f"Period Revenue Shift ({base_period} to {target_period})",
                     "statement": (
-                        f"Total revenue moved from {format_currency(comp_geo['base_revenue'])} in {base_period} "
-                        f"to {format_currency(comp_geo['target_revenue'])} in {target_period}, representing a "
+                        f"Total revenue moved from {format_currency(base_r)} in {base_period} "
+                        f"to {format_currency(targ_r)} in {target_period}, representing a "
                         f"{direction} of {format_percent(chg_pct)} ({format_currency(chg_abs)})."
                     ),
                     "metric": f"{target_period} Revenue Change",
@@ -162,31 +165,37 @@ class DataAnalystAgent:
                 # Dimensional Geo Breakdown
                 geo_breakdown = comp_geo.get("breakdown", [])
                 if geo_breakdown:
-                    worst_countries = [c for c in geo_breakdown if c["revenue_change_abs"] < 0][:3]
-                    best_countries = [c for c in geo_breakdown if c["revenue_change_abs"] > 0][:3]
+                    worst_countries = [c for c in geo_breakdown if c.get("revenue_change_abs", 0) < 0][:3]
+                    best_countries = [c for c in geo_breakdown if c.get("revenue_change_abs", 0) > 0][:3]
                     notable_countries = worst_countries if "decline" in q_lower or not best_countries else best_countries
 
                     for c in notable_countries:
                         ev_id_c = f"EV-CALC-{len(evidence_list)+1:02d}"
+                        c_name = c.get("country", "Unknown")
+                        c_base = c.get("base_revenue", 0.0)
+                        c_targ = c.get("target_revenue", 0.0)
+                        c_growth = c.get("growth_pct", 0.0)
+                        c_chg = c.get("revenue_change_abs", 0.0)
+
                         evidence_list.append({
                             "id": ev_id_c,
                             "source": source_label,
                             "source_type": "data_calculation",
                             "details": (
-                                f"Country: {c['country']}, {base_period}: {format_currency(c['base_revenue'])}, "
-                                f"{target_period}: {format_currency(c['target_revenue'])}, Growth: {format_percent(c['growth_pct'])}"
+                                f"Country: {c_name}, {base_period}: {format_currency(c_base)}, "
+                                f"{target_period}: {format_currency(c_targ)}, Growth: {format_percent(c_growth)}"
                             ),
                             "calculation": f"compare_periods(dimension='country', {base_period}, {target_period})",
                         })
-                        c_dir = "contracted" if c["growth_pct"] < 0 else "expanded"
+                        c_dir = "contracted" if c_growth < 0 else "expanded"
                         findings.append({
-                            "title": f"Regional Shift: {c['country']}",
+                            "title": f"Regional Shift: {c_name}",
                             "statement": (
-                                f"Revenue in {c['country']} {c_dir} by {format_percent(c['growth_pct'])} "
-                                f"({format_currency(c['revenue_change_abs'])}) during {target_period}."
+                                f"Revenue in {c_name} {c_dir} by {format_percent(c_growth)} "
+                                f"({format_currency(c_chg)}) during {target_period}."
                             ),
-                            "metric": f"{c['country']} Growth",
-                            "value": format_percent(c['growth_pct']),
+                            "metric": f"{c_name} Growth",
+                            "value": format_percent(c_growth),
                             "evidence_ids": [ev_id_c],
                             "confidence": "High",
                             "classification": "fact",
@@ -195,28 +204,33 @@ class DataAnalystAgent:
                 # Dimensional Category Breakdown
                 cat_breakdown = comp_cat.get("breakdown", [])
                 if cat_breakdown:
-                    notable_cats = sorted(cat_breakdown, key=lambda x: abs(x["revenue_change_abs"]), reverse=True)[:2]
+                    notable_cats = sorted(cat_breakdown, key=lambda x: abs(x.get("revenue_change_abs", 0)), reverse=True)[:2]
                     for cat in notable_cats:
                         ev_id_cat = f"EV-CALC-{len(evidence_list)+1:02d}"
+                        cat_name = cat.get("category", "General")
+                        cat_base = cat.get("base_revenue", 0.0)
+                        cat_targ = cat.get("target_revenue", 0.0)
+                        cat_growth = cat.get("growth_pct", 0.0)
+
                         evidence_list.append({
                             "id": ev_id_cat,
                             "source": source_label,
                             "source_type": "data_calculation",
                             "details": (
-                                f"Category: {cat['category']}, {base_period}: {format_currency(cat['base_revenue'])}, "
-                                f"{target_period}: {format_currency(cat['target_revenue'])}, Growth: {format_percent(cat['growth_pct'])}"
+                                f"Category: {cat_name}, {base_period}: {format_currency(cat_base)}, "
+                                f"{target_period}: {format_currency(cat_targ)}, Growth: {format_percent(cat_growth)}"
                             ),
                             "calculation": f"compare_periods(dimension='category', {base_period}, {target_period})",
                         })
-                        cat_dir = "decline" if cat["growth_pct"] < 0 else "growth"
+                        cat_dir = "decline" if cat_growth < 0 else "growth"
                         findings.append({
-                            "title": f"Category Impact: {cat['category']}",
+                            "title": f"Category Impact: {cat_name}",
                             "statement": (
-                                f"The {cat['category']} category recorded a {cat_dir} of {format_percent(cat['growth_pct'])} "
+                                f"The {cat_name} category recorded a {cat_dir} of {format_percent(cat_growth)} "
                                 f"in {target_period} relative to {base_period}."
                             ),
-                            "metric": f"{cat['category']} Growth",
-                            "value": format_percent(cat['growth_pct']),
+                            "metric": f"{cat_name} Growth",
+                            "value": format_percent(cat_growth),
                             "evidence_ids": [ev_id_cat],
                             "confidence": "High",
                             "classification": "fact",
@@ -301,21 +315,25 @@ class DataAnalystAgent:
                 tool_results.append({"tool": "revenue_by_category", "output": cat_data})
                 for c_item in cat_data.get("categories", [])[:3]:
                     ev_c = f"EV-CALC-{len(evidence_list)+1:02d}"
+                    c_cat_name = c_item.get("category", "General")
+                    c_rev = c_item.get("revenue", 0.0)
+                    c_share = c_item.get("revenue_share_pct", 0.0)
+                    c_units = c_item.get("units_sold", 0)
                     evidence_list.append({
                         "id": ev_c,
                         "source": source_label,
                         "source_type": "data_calculation",
-                        "details": f"Category {c_item['category']}: Revenue {format_currency(c_item['revenue'])}, Share {c_item['revenue_share_pct']}%",
+                        "details": f"Category {c_cat_name}: Revenue {format_currency(c_rev)}, Share {c_share}%",
                         "calculation": f"revenue_by_category(period='{target_period}')",
                     })
                     findings.append({
-                        "title": f"Category Share: {c_item['category']}",
+                        "title": f"Category Share: {c_cat_name}",
                         "statement": (
-                            f"The {c_item['category']} category delivered {format_currency(c_item['revenue'])} "
-                            f"({c_item['revenue_share_pct']}% of total revenue) across {c_item['units_sold']:,} units."
+                            f"The {c_cat_name} category delivered {format_currency(c_rev)} "
+                            f"({c_share}% of total revenue) across {c_units:,} units."
                         ),
-                        "metric": f"{c_item['category']} Share",
-                        "value": f"{c_item['revenue_share_pct']}%",
+                        "metric": f"{c_cat_name} Share",
+                        "value": f"{c_share}%",
                         "evidence_ids": [ev_c],
                         "confidence": "High",
                         "classification": "fact",
