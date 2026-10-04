@@ -1,8 +1,8 @@
 """
-Data Analyst Agent.
+Data Analyst Agent  (v2.1 – fully defensive dict access).
 Executes deterministic Pandas analytical tools on NovaMart structured data.
 Computes KPIs, compares periods, identifies trends and anomalies dynamically.
-Never guesses or estimates numbers.
+Never guesses or estimates numbers.  All dict lookups use .get() with defaults.
 """
 
 from __future__ import annotations
