@@ -943,12 +943,15 @@ if should_run or "report_data" in st.session_state:
                 delta_val = km.get("delta", "")
                 delta_class = "metric-delta-neg" if delta_val and "-" in str(delta_val) else "metric-delta-pos"
                 delta_icon = "▼" if delta_val and "-" in str(delta_val) else "▲"
+                km_name = km.get('name', 'Metric')
+                km_value = km.get('value', 'N/A')
+                km_context = km.get('context', '')
                 cols[idx].markdown(f"""
                 <div class="metric-card">
-                    <div class="metric-label">{km['name']}</div>
-                    <div class="metric-value">{km['value']}</div>
+                    <div class="metric-label">{km_name}</div>
+                    <div class="metric-value">{km_value}</div>
                     <div class="{delta_class}">{delta_icon} {delta_val or 'N/A'}</div>
-                    <div class="metric-context">{km.get('context', '')}</div>
+                    <div class="metric-context">{km_context}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -1031,16 +1034,19 @@ if should_run or "report_data" in st.session_state:
             if facts:
                 for f in facts:
                     ev_ids = ", ".join(f.get("evidence_ids", [])) or "sales.csv"
+                    f_title = f.get('title', 'Analytical Fact')
+                    f_statement = f.get('statement', '')
+                    f_conf = f.get('confidence', 'High')
                     st.markdown(f"""
                     <div class="finding-fact">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                            <strong style="color: #F8FAFC; font-size: 0.9rem;">{f['title']}</strong>
+                            <strong style="color: #F8FAFC; font-size: 0.9rem;">{f_title}</strong>
                             <div style="display: flex; gap: 6px;">
                                 <span class="badge badge-fact">Fact</span>
-                                <span class="badge badge-high">{f.get('confidence', 'High')}</span>
+                                <span class="badge badge-high">{f_conf}</span>
                             </div>
                         </div>
-                        <p style="color: #CBD5E1; font-size: 0.85rem; margin: 0 0 6px 0; line-height: 1.5;">{f['statement']}</p>
+                        <p style="color: #CBD5E1; font-size: 0.85rem; margin: 0 0 6px 0; line-height: 1.5;">{f_statement}</p>
                         <small style="color: #475569;">Evidence: {ev_ids}</small>
                     </div>
                     """, unsafe_allow_html=True)
@@ -1052,16 +1058,18 @@ if should_run or "report_data" in st.session_state:
             hypotheses = report.get("hypotheses", [])
             if hypotheses:
                 for h in hypotheses:
+                    h_statement = h.get('statement', '')
+                    h_conf = h.get('confidence', 'Medium')
                     st.markdown(f"""
                     <div class="finding-hypo">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                             <strong style="color: #F8FAFC; font-size: 0.9rem;">Plausible Hypothesis</strong>
                             <div style="display: flex; gap: 6px;">
                                 <span class="badge badge-hypo">Hypothesis</span>
-                                <span class="badge badge-med">{h.get('confidence', 'Medium')}</span>
+                                <span class="badge badge-med">{h_conf}</span>
                             </div>
                         </div>
-                        <p style="color: #CBD5E1; font-size: 0.85rem; margin: 0 0 6px 0; line-height: 1.5;">{h['statement']}</p>
+                        <p style="color: #CBD5E1; font-size: 0.85rem; margin: 0 0 6px 0; line-height: 1.5;">{h_statement}</p>
                         <small style="color: #475569;">⚠️ Requires verification. Not proven as sole causal driver.</small>
                     </div>
                     """, unsafe_allow_html=True)
@@ -1085,13 +1093,17 @@ if should_run or "report_data" in st.session_state:
             r_cols = st.columns(min(len(recomms), 4))
             for idx, r in enumerate(recomms):
                 col = r_cols[idx % len(r_cols)]
-                badge_class = "priority-badge-high" if r["priority"] == "High" else "priority-badge-med"
+                r_priority = r.get("priority", "Medium")
+                badge_class = "priority-badge-high" if r_priority.lower() == "high" else "priority-badge-med"
+                r_action = r.get("action", "")
+                r_owner = r.get("owner", "Operations")
+                r_rationale = r.get("rationale", "")
                 col.markdown(f"""
                 <div class="recom-card">
-                    <span class="{badge_class}">{r['priority'].upper()} PRIORITY</span>
-                    <h4 style="color: #F8FAFC; margin: 10px 0 6px 0; font-size: 0.92rem; line-height: 1.4;">{r['action']}</h4>
-                    <p style="color: #818CF8; font-size: 0.82rem; margin-bottom: 4px;"><strong>Owner:</strong> {r['owner']}</p>
-                    <p style="color: #94A3B8; font-size: 0.78rem; line-height: 1.5;">{r['rationale']}</p>
+                    <span class="{badge_class}">{r_priority.upper()} PRIORITY</span>
+                    <h4 style="color: #F8FAFC; margin: 10px 0 6px 0; font-size: 0.92rem; line-height: 1.4;">{r_action}</h4>
+                    <p style="color: #818CF8; font-size: 0.82rem; margin-bottom: 4px;"><strong>Owner:</strong> {r_owner}</p>
+                    <p style="color: #94A3B8; font-size: 0.78rem; line-height: 1.5;">{r_rationale}</p>
                 </div>
                 """, unsafe_allow_html=True)
 
@@ -1103,16 +1115,19 @@ if should_run or "report_data" in st.session_state:
             if evidence_items:
                 for ev in evidence_items:
                     calc_label = ev.get("calculation") or "Document Extraction"
+                    ev_id = ev.get("id", "EV-00")
+                    ev_source = ev.get("source", "sales.csv")
+                    ev_details = ev.get("details", "")
                     st.markdown(f"""
                     <div class="glass-card" style="padding: 14px; margin-bottom: 8px;">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                            <span style="color: #818CF8; font-weight: 700;">[{ev['id']}]</span>
+                            <span style="color: #818CF8; font-weight: 700;">[{ev_id}]</span>
                             <span class="badge badge-med">{ev.get('source_type', 'data')}</span>
                         </div>
                         <div style="color: #94A3B8; font-size: 0.82rem; margin-bottom: 4px;">
-                            <strong>Source:</strong> <code style="color: #A78BFA;">{ev['source']}</code>
+                            <strong>Source:</strong> <code style="color: #A78BFA;">{ev_source}</code>
                         </div>
-                        <div style="color: #CBD5E1; font-size: 0.82rem; line-height: 1.5;">{ev['details']}</div>
+                        <div style="color: #CBD5E1; font-size: 0.82rem; line-height: 1.5;">{ev_details}</div>
                         <div style="color: #475569; font-size: 0.75rem; margin-top: 6px;">
                             🔧 Tool: <code>{calc_label}</code>
                         </div>
