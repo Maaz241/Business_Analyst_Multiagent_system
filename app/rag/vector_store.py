@@ -42,8 +42,22 @@ class MemoryVectorStore:
         self.embeddings: np.ndarray = np.empty((0, 768))
 
     def add_chunks(self, chunks: List[DocumentChunk], embeddings: List[List[float]]):
+        if not chunks:
+            return
         self.chunks.extend(chunks)
-        new_vecs = np.array(embeddings, dtype=np.float32)
+        target_dim = 768
+        clean_embeddings = []
+        for vec in embeddings:
+            if not isinstance(vec, (list, np.ndarray)) or len(vec) == 0:
+                clean_embeddings.append([0.0] * target_dim)
+            elif len(vec) > target_dim:
+                clean_embeddings.append(list(vec[:target_dim]))
+            elif len(vec) < target_dim:
+                clean_embeddings.append(list(vec) + [0.0] * (target_dim - len(vec)))
+            else:
+                clean_embeddings.append(list(vec))
+
+        new_vecs = np.array(clean_embeddings, dtype=np.float32)
         if self.embeddings.size == 0:
             self.embeddings = new_vecs
         else:

@@ -174,24 +174,35 @@ class GeminiService:
 
         model_name = model or self.embedding_model
         embeddings: List[List[float]] = []
-
         config = types.EmbedContentConfig(output_dimensionality=768)
 
+        api_failed = False
         for chunk in texts:
-            try:
-                res = self._client.models.embed_content(
-                    model=model_name,
-                    contents=chunk,
-                    config=config,
-                )
-                if hasattr(res, "embedding") and hasattr(res.embedding, "values"):
-                    embeddings.append(res.embedding.values)
-                elif hasattr(res, "embeddings") and res.embeddings:
-                    embeddings.append(res.embeddings[0].values)
-                else:
+            if not api_failed:
+                try:
+                    res = self._client.models.embed_content(
+                        model=model_name,
+                        contents=chunk,
+                        config=config,
+                    )
+                    vals = None
+                    if hasattr(res, "embedding") and hasattr(res.embedding, "values"):
+                        vals = res.embedding.values
+                    elif hasattr(res, "embeddings") and res.embeddings:
+                        vals = res.embeddings[0].values
+
+                    if vals and len(vals) == 768:
+                        embeddings.append(list(vals))
+                    elif vals:
+                        norm_vec = list(vals[:768]) if len(vals) > 768 else list(vals) + [0.0] * (768 - len(vals))
+                        embeddings.append(norm_vec)
+                    else:
+                        embeddings.append(self._pseudo_embed(chunk))
+                except Exception as e:
+                    logger.warning("Embed error (%s). Falling back to pseudo-embeddings for remaining chunks.", e)
+                    api_failed = True
                     embeddings.append(self._pseudo_embed(chunk))
-            except Exception as e:
-                logger.warning("Embed error for chunk (%s). Using fallback embedding.", e)
+            else:
                 embeddings.append(self._pseudo_embed(chunk))
 
         return embeddings
