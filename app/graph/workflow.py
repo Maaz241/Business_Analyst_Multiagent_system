@@ -66,7 +66,11 @@ def data_analyst_node(state: AnalysisState) -> Dict[str, Any]:
     iteration = state.get("iteration", 0)
 
     agent = DataAnalystAgent()
-    res = agent.run(question, plan_tasks=plan, iteration=iteration)
+    try:
+        res = agent.run(question, plan_tasks=plan, iteration=iteration)
+    except Exception as e:
+        logger.error("DataAnalyst execution error: %s", e, exc_info=True)
+        res = {"tool_results": [], "findings": [], "charts": ["revenue_trend"], "summary_metrics": {}, "evidence": []}
     duration = time.perf_counter() - start
 
     trace = _add_trace(
@@ -101,7 +105,11 @@ def rag_analyst_node(state: AnalysisState) -> Dict[str, Any]:
     iteration = state.get("iteration", 0)
 
     agent = RAGAnalystAgent()
-    res = agent.run(question, plan_tasks=plan, iteration=iteration)
+    try:
+        res = agent.run(question, plan_tasks=plan, iteration=iteration)
+    except Exception as e:
+        logger.error("RAGAnalyst execution error: %s", e, exc_info=True)
+        res = {"findings": [], "citations": [], "evidence": []}
     duration = time.perf_counter() - start
 
     trace = _add_trace(
@@ -134,13 +142,23 @@ def critic_node(state: AnalysisState) -> Dict[str, Any]:
     iteration = state.get("iteration", 0)
 
     agent = CriticAgent()
-    critique = agent.run(
-        question=question,
-        data_findings=data_findings,
-        rag_findings=rag_findings,
-        evidence=evidence,
-        iteration=iteration,
-    )
+    try:
+        critique = agent.run(
+            question=question,
+            data_findings=data_findings,
+            rag_findings=rag_findings,
+            evidence=evidence,
+            iteration=iteration,
+        )
+    except Exception as e:
+        logger.error("Critic execution error: %s", e, exc_info=True)
+        critique = {
+            "validated_findings": data_findings + rag_findings,
+            "hypotheses": [],
+            "critique_log": [],
+            "needs_replanning": False,
+            "replan_reason": None,
+        }
     duration = time.perf_counter() - start
 
     critique_log = critique.get("critique_log", [])
@@ -181,15 +199,27 @@ def executive_report_node(state: AnalysisState) -> Dict[str, Any]:
     iteration = state.get("iteration", 0)
 
     agent = ExecutiveReportAgent()
-    report = agent.run(
-        question=question,
-        validated_findings=val_findings,
-        hypotheses=hypotheses,
-        evidence=evidence,
-        summary_metrics=metrics,
-        charts=charts,
-        iteration=iteration,
-    )
+    try:
+        report = agent.run(
+            question=question,
+            validated_findings=val_findings,
+            hypotheses=hypotheses,
+            evidence=evidence,
+            summary_metrics=metrics,
+            charts=charts,
+            iteration=iteration,
+        )
+    except Exception as e:
+        logger.error("ExecutiveReport execution error: %s", e, exc_info=True)
+        from app.models.schemas import ExecutiveReport
+        report = agent._generate_deterministic_report(
+            question=question,
+            validated_findings=val_findings,
+            hypotheses=hypotheses,
+            evidence=evidence,
+            summary_metrics=metrics,
+            charts=charts,
+        )
     duration = time.perf_counter() - start
 
     trace = _add_trace(

@@ -448,27 +448,30 @@ def _generate_markdown_report(report: dict, trace: list) -> str:
     ]
 
     for km in report.get("key_metrics", []):
-        lines.append(f"- **{km['name']}**: {km['value']} ({km.get('delta', 'N/A')})")
+        lines.append(f"- **{km.get('name', 'Metric')}**: {km.get('value', 'N/A')} ({km.get('delta', 'N/A')})")
 
     lines.extend(["", "---", "", "## Validated Findings"])
     for f in report.get("findings", []):
         tag = "✅ FACT" if f.get("classification") in ["fact", "evidence"] else "💡 HYPOTHESIS"
-        lines.append(f"### {tag}: {f['title']}")
-        lines.append(f"{f['statement']}")
+        lines.append(f"### {tag}: {f.get('title', 'Finding')}")
+        lines.append(f"{f.get('statement', '')}")
         lines.append(f"*Confidence: {f.get('confidence', 'Medium')} | Evidence: {', '.join(f.get('evidence_ids', []))}*")
         lines.append("")
 
     lines.extend(["---", "", "## Recommendations"])
     for r in report.get("recommendations", []):
-        lines.append(f"### [{r['priority'].upper()}] {r['action']}")
-        lines.append(f"**Owner:** {r['owner']}")
-        lines.append(f"{r['rationale']}")
+        r_pri = r.get("priority", "Medium")
+        lines.append(f"### [{r_pri.upper()}] {r.get('action', '')}")
+        lines.append(f"**Owner:** {r.get('owner', 'Operations')}")
+        lines.append(f"{r.get('rationale', '')}")
         lines.append("")
 
     lines.extend(["---", "", "## Evidence Trail"])
     for ev in report.get("evidence", []):
-        lines.append(f"**[{ev['id']}]** `{ev['source']}` ({ev.get('source_type', 'data')})")
-        lines.append(f"  {ev['details']}")
+        ev_id = ev.get("id", "EV-00")
+        ev_src = ev.get("source", "sales.csv")
+        lines.append(f"**[{ev_id}]** `{ev_src}` ({ev.get('source_type', 'data')})")
+        lines.append(f"  {ev.get('details', '')}")
         lines.append("")
 
     lines.extend(["---", "", "## Limitations"])

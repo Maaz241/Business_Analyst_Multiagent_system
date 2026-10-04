@@ -266,7 +266,7 @@ class DataAnalystAgent:
                         "details": f"Country: {c_country}, Revenue: {format_currency(c_rev)}, Share: {c_share}%",
                         "calculation": f"revenue_by_country(period='{target_period}')",
                     })
-                    cnt = c.get("orders", c.get("order_count", 0))
+                    cnt = int(c.get("orders", c.get("order_count", 0)) or 0)
                     findings.append({
                         "title": f"Territory Distribution: {c_country}",
                         "statement": (
@@ -292,7 +292,7 @@ class DataAnalystAgent:
                     ev_p = f"EV-CALC-{len(evidence_list)+1:02d}"
                     p_name = prod.get("product_name", "Unknown SKU")
                     p_rev = prod.get("revenue", 0.0)
-                    p_units = prod.get("units_sold", 0)
+                    p_units = int(prod.get("units_sold", 0) or 0)
                     p_cat = prod.get("category", "General")
                     evidence_list.append({
                         "id": ev_p,
@@ -322,7 +322,7 @@ class DataAnalystAgent:
                     c_cat_name = c_item.get("category", "General")
                     c_rev = c_item.get("revenue", 0.0)
                     c_share = c_item.get("revenue_share_pct", 0.0)
-                    c_units = c_item.get("units_sold", 0)
+                    c_units = int(c_item.get("units_sold", 0) or 0)
                     evidence_list.append({
                         "id": ev_c,
                         "source": source_label,
@@ -349,7 +349,7 @@ class DataAnalystAgent:
                 tool_results.append({"tool": "rfm_segmentation", "output": rfm_res})
                 charts_recommended.append("rfm_treemap")
 
-                tot_cust = q_cust.get("total_customers", q_cust.get("active_registered_customers", 0))
+                tot_cust = int(q_cust.get("total_customers", q_cust.get("active_registered_customers", 0)) or 0)
                 rep_rate = q_cust.get("repeat_customer_rate_pct", 0.0)
 
                 ev_rfm = f"EV-CALC-{len(evidence_list)+1:02d}"
