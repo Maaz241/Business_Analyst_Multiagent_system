@@ -403,24 +403,48 @@ def customer_metrics(
     df: Optional[pd.DataFrame] = None,
 ) -> Dict[str, Any]:
     """Calculate customer-level metrics: unique, active, repeat rate, and segmentation."""
-    filtered = filter_dataset(df=df, period=period)
+    try:
+        filtered = filter_dataset(df=df, period=period)
+        if filtered.empty or "customer_id" not in filtered.columns:
+            return {
+                "period": period or "All Time",
+                "total_customers": 0,
+                "active_registered_customers": 0,
+                "repeat_customers_count": 0,
+                "repeat_customer_rate_pct": 0.0,
+                "average_orders_per_customer": 0.0,
+            }
 
-    # Exclude guest checkouts from customer loyalty repeat rate calculations
-    registered = filtered[~filtered["customer_id"].str.startswith("GUEST_")]
-    orders_per_cust = registered.groupby("customer_id")["order_id"].nunique()
+        # Ensure customer_id is string before string operations
+        cid_str = filtered["customer_id"].astype(str)
+        # Exclude guest checkouts from customer loyalty repeat rate calculations
+        registered = filtered[~cid_str.str.startswith("GUEST_")]
+        if registered.empty:
+            registered = filtered  # fallback: use all rows
+        orders_per_cust = registered.groupby("customer_id")["order_id"].nunique()
 
-    total_active_cust = len(orders_per_cust)
-    repeat_cust_count = int((orders_per_cust > 1).sum())
-    repeat_rate = ((repeat_cust_count / total_active_cust) * 100) if total_active_cust > 0 else 0.0
+        total_active_cust = len(orders_per_cust)
+        repeat_cust_count = int((orders_per_cust > 1).sum())
+        repeat_rate = ((repeat_cust_count / total_active_cust) * 100) if total_active_cust > 0 else 0.0
 
-    return {
-        "period": period or "All Time",
-        "total_customers": total_active_cust,
-        "active_registered_customers": total_active_cust,
-        "repeat_customers_count": repeat_cust_count,
-        "repeat_customer_rate_pct": round(repeat_rate, 2),
-        "average_orders_per_customer": round(float(orders_per_cust.mean()), 2) if total_active_cust > 0 else 0.0,
-    }
+        return {
+            "period": period or "All Time",
+            "total_customers": total_active_cust,
+            "active_registered_customers": total_active_cust,
+            "repeat_customers_count": repeat_cust_count,
+            "repeat_customer_rate_pct": round(repeat_rate, 2),
+            "average_orders_per_customer": round(float(orders_per_cust.mean()), 2) if total_active_cust > 0 else 0.0,
+        }
+    except Exception as e:
+        logger.warning("customer_metrics failed: %s", e)
+        return {
+            "period": period or "All Time",
+            "total_customers": 0,
+            "active_registered_customers": 0,
+            "repeat_customers_count": 0,
+            "repeat_customer_rate_pct": 0.0,
+            "average_orders_per_customer": 0.0,
+        }
 
 
 def detect_anomalies(
@@ -478,66 +502,89 @@ def rfm_segmentation(
     RFM (Recency, Frequency, Monetary) Customer Segmentation.
     Deterministically segments customers into value tiers.
     """
-    data = filter_dataset(df=df, period=period)
-    if data.empty:
-        return {"segments": [], "total_customers": 0}
+    try:
+        data = filter_dataset(df=df, period=period)
+        if data.empty:
+            return {"segments": [], "total_customers": 0, "period": period or "All Time", "segment_distribution": {}}
 
-    registered = data[~data["customer_id"].str.startswith("GUEST_")]
-    max_date = registered["order_date"].max()
+        if "customer_id" not in data.columns or "order_date" not in data.columns:
+            return {"segments": [], "total_customers": 0, "period": period or "All Time", "segment_distribution": {}}
 
-    rfm = registered.groupby("customer_id").agg(
-        recency=("order_date", lambda x: (max_date - x.max()).days),
-        frequency=("order_id", "nunique"),
-        monetary=("revenue", "sum"),
-    ).reset_index()
+        # Ensure customer_id is string before string operations
+        cid_str = data["customer_id"].astype(str)
+        guest_mask = cid_str.str.startswith("GUEST_")
+        registered = data[~guest_mask]
+        if registered.empty:
+            registered = data  # fallback: use all rows if no non-guest customers
 
-    # Quantile-based scoring (1-5 scale)
-    for col in ["recency", "frequency", "monetary"]:
-        try:
-            if col == "recency":
-                rfm[f"{col}_score"] = pd.qcut(rfm[col], q=5, labels=[5, 4, 3, 2, 1], duplicates="drop").astype(int)
+        max_date = registered["order_date"].max()
+        if pd.isna(max_date):
+            return {"segments": [], "total_customers": 0, "period": period or "All Time", "segment_distribution": {}}
+
+        rfm = registered.groupby("customer_id").agg(
+            recency=("order_date", lambda x: (max_date - x.max()).days),
+            frequency=("order_id", "nunique"),
+            monetary=("revenue", "sum"),
+        ).reset_index()
+
+        if rfm.empty:
+            return {"segments": [], "total_customers": 0, "period": period or "All Time", "segment_distribution": {}}
+
+        # Quantile-based scoring (1-5 scale)
+        for col in ["recency", "frequency", "monetary"]:
+            try:
+                if col == "recency":
+                    scores = pd.qcut(rfm[col], q=5, labels=[5, 4, 3, 2, 1], duplicates="drop")
+                else:
+                    scores = pd.qcut(rfm[col], q=5, labels=[1, 2, 3, 4, 5], duplicates="drop")
+                rfm[f"{col}_score"] = scores.astype(float).astype(int)
+            except (ValueError, TypeError, Exception):
+                rfm[f"{col}_score"] = 3
+
+        rfm["rfm_score"] = rfm["recency_score"] + rfm["frequency_score"] + rfm["monetary_score"]
+
+        # Segment labels
+        def label_segment(score: int) -> str:
+            try:
+                score = int(score)
+            except (ValueError, TypeError):
+                score = 9
+            if score >= 13:
+                return "Champions"
+            elif score >= 10:
+                return "Loyal"
+            elif score >= 7:
+                return "At Risk"
+            elif score >= 5:
+                return "Needs Attention"
             else:
-                rfm[f"{col}_score"] = pd.qcut(rfm[col], q=5, labels=[1, 2, 3, 4, 5], duplicates="drop").astype(int)
-        except (ValueError, TypeError):
-            rfm[f"{col}_score"] = 3
+                return "Lost"
 
-    rfm["rfm_score"] = rfm["recency_score"] + rfm["frequency_score"] + rfm["monetary_score"]
+        rfm["segment"] = rfm["rfm_score"].apply(label_segment)
 
-    # Segment labels
-    def label_segment(score: int) -> str:
-        if score >= 13:
-            return "Champions"
-        elif score >= 10:
-            return "Loyal"
-        elif score >= 7:
-            return "At Risk"
-        elif score >= 5:
-            return "Needs Attention"
-        else:
-            return "Lost"
-
-    rfm["segment"] = rfm["rfm_score"].apply(label_segment)
-
-    segment_summary = (
-        rfm.groupby("segment")
-        .agg(
-            customer_count=("customer_id", "count"),
-            avg_monetary=("monetary", "mean"),
-            avg_frequency=("frequency", "mean"),
-            avg_recency=("recency", "mean"),
+        segment_summary = (
+            rfm.groupby("segment")
+            .agg(
+                customer_count=("customer_id", "count"),
+                avg_monetary=("monetary", "mean"),
+                avg_frequency=("frequency", "mean"),
+                avg_recency=("recency", "mean"),
+            )
+            .reset_index()
         )
-        .reset_index()
-    )
-    segment_summary["avg_monetary"] = segment_summary["avg_monetary"].round(2)
-    segment_summary["avg_frequency"] = segment_summary["avg_frequency"].round(2)
-    segment_summary["avg_recency"] = segment_summary["avg_recency"].round(1)
+        segment_summary["avg_monetary"] = segment_summary["avg_monetary"].round(2)
+        segment_summary["avg_frequency"] = segment_summary["avg_frequency"].round(2)
+        segment_summary["avg_recency"] = segment_summary["avg_recency"].round(1)
 
-    return {
-        "period": period or "All Time",
-        "total_customers": len(rfm),
-        "segments": segment_summary.to_dict(orient="records"),
-        "segment_distribution": rfm["segment"].value_counts().to_dict(),
-    }
+        return {
+            "period": period or "All Time",
+            "total_customers": len(rfm),
+            "segments": segment_summary.to_dict(orient="records"),
+            "segment_distribution": rfm["segment"].value_counts().to_dict(),
+        }
+    except Exception as e:
+        logger.warning("rfm_segmentation failed: %s", e)
+        return {"segments": [], "total_customers": 0, "period": period or "All Time", "segment_distribution": {}}
 
 
 def revenue_time_series(

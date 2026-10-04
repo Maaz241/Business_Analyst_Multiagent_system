@@ -87,10 +87,10 @@ class ExecutiveReportAgent:
             pydantic_evidence: List[Evidence] = []
             for ev in evidence:
                 pydantic_evidence.append(Evidence(
-                    id=ev["id"],
-                    source=ev["source"],
+                    id=ev.get("id", f"EV-{len(pydantic_evidence)+1:02d}"),
+                    source=ev.get("source", "unknown"),
                     source_type=ev.get("source_type", "data_calculation"),
-                    details=ev["details"],
+                    details=ev.get("details", ""),
                     page=ev.get("page"),
                     calculation=ev.get("calculation"),
                 ))
@@ -98,7 +98,7 @@ class ExecutiveReportAgent:
             pydantic_hypotheses: List[Hypothesis] = []
             for h in hypotheses:
                 pydantic_hypotheses.append(Hypothesis(
-                    statement=h["statement"],
+                    statement=h.get("statement", ""),
                     supporting_evidence=h.get("supporting_evidence", []),
                     confidence=h.get("confidence", "Medium"),
                     alternative_explanations=h.get("alternative_explanations", []),

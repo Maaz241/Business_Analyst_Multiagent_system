@@ -47,32 +47,32 @@ class RAGAnalystAgent:
                 search_res = search_company_knowledge(query=query, top_k=3)
                 if search_res.get("status") == "success":
                     for item in search_res.get("citations", []):
-                        c_id = item["chunk_id"]
-                        if c_id not in seen_chunks:
+                        c_id = item.get("chunk_id", "")
+                        if c_id and c_id not in seen_chunks:
                             seen_chunks.add(c_id)
                             citations.append(item)
 
                             ev_id = f"EV-DOC-{len(evidence_list)+1:02d}"
                             evidence_list.append({
                                 "id": ev_id,
-                                "source": item["source_file"],
+                                "source": item.get("source_file", "unknown"),
                                 "source_type": "document_passage",
-                                "page": item["page"],
-                                "details": item["raw_text"][:300] + "...",
+                                "page": item.get("page", 0),
+                                "details": (item.get("raw_text", "")[:300] + "...") if item.get("raw_text") else "No text available",
                             })
 
             # 2. Extract documented contextual findings instantly without slow LLM loops
             for cit in citations[:4]:
-                src = cit["source_file"]
-                pg = cit["page"]
-                txt = cit["raw_text"].strip()
+                src = cit.get("source_file", "unknown")
+                pg = cit.get("page", 0)
+                txt = (cit.get("raw_text") or "").strip()
 
                 # Clean first 2 sentences for immediate evidence statement
                 sentences = [s.strip() for s in txt.replace("\n", " ").split(".") if len(s.strip()) > 15]
-                summary_stmt = ". ".join(sentences[:2]) + "." if sentences else txt[:180] + "..."
+                summary_stmt = ". ".join(sentences[:2]) + "." if sentences else (txt[:180] + "..." if txt else "Document context retrieved.")
 
                 title = f"Document Context: {src} (p.{pg})"
-                matching_ev = [e["id"] for e in evidence_list if e["source"] == src]
+                matching_ev = [e["id"] for e in evidence_list if e.get("source") == src]
 
                 findings.append({
                     "title": title,

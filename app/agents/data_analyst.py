@@ -256,22 +256,25 @@ class DataAnalystAgent:
                 top_countries = geo_data.get("countries", [])[:3]
                 for c in top_countries:
                     ev_id_geo = f"EV-CALC-{len(evidence_list)+1:02d}"
+                    c_country = c.get("country", "Unknown")
+                    c_rev = c.get("revenue", 0.0)
+                    c_share = c.get("revenue_share_pct", 0.0)
                     evidence_list.append({
                         "id": ev_id_geo,
                         "source": source_label,
                         "source_type": "data_calculation",
-                        "details": f"Country: {c['country']}, Revenue: {format_currency(c['revenue'])}, Share: {c['revenue_share_pct']}%",
+                        "details": f"Country: {c_country}, Revenue: {format_currency(c_rev)}, Share: {c_share}%",
                         "calculation": f"revenue_by_country(period='{target_period}')",
                     })
                     cnt = c.get("orders", c.get("order_count", 0))
                     findings.append({
-                        "title": f"Territory Distribution: {c['country']}",
+                        "title": f"Territory Distribution: {c_country}",
                         "statement": (
-                            f"{c['country']} generated {format_currency(c['revenue'])} ({c['revenue_share_pct']}% of total revenue) "
+                            f"{c_country} generated {format_currency(c_rev)} ({c_share}% of total revenue) "
                             f"across {cnt:,} orders in {target_period or 'the active reporting period'}."
                         ),
-                        "metric": f"{c['country']} Share",
-                        "value": f"{c['revenue_share_pct']}%",
+                        "metric": f"{c_country} Share",
+                        "value": f"{c_share}%",
                         "evidence_ids": [ev_id_geo],
                         "confidence": "High",
                         "classification": "fact",

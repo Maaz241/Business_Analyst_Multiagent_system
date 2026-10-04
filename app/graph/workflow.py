@@ -73,7 +73,7 @@ def data_analyst_node(state: AnalysisState) -> Dict[str, Any]:
         state,
         "Data Analyst",
         "executed_analytics",
-        f"Executed {len(res['tool_results'])} analytical tools, identified {len(res['findings'])} quantitative facts.",
+        f"Executed {len(res.get('tool_results', []))} analytical tools, identified {len(res.get('findings', []))} quantitative facts.",
         tool="Pandas Analytics",
         duration=duration,
     )
@@ -108,17 +108,17 @@ def rag_analyst_node(state: AnalysisState) -> Dict[str, Any]:
         state,
         "RAG Agent",
         "retrieved_documents",
-        f"Retrieved {len(res['citations'])} corporate document citations from ChromaDB knowledge base.",
+        f"Retrieved {len(res.get('citations', []))} corporate document citations from ChromaDB knowledge base.",
         tool="ChromaDB Semantic Search",
         duration=duration,
     )
 
     combined_ev = list(state.get("evidence", []))
-    combined_ev.extend(res["evidence"])
+    combined_ev.extend(res.get("evidence", []))
 
     return {
-        "rag_findings": res["findings"],
-        "citations": res["citations"],
+        "rag_findings": res.get("findings", []),
+        "citations": res.get("citations", []),
         "evidence": combined_ev,
         "agent_trace": trace,
     }
@@ -143,11 +143,13 @@ def critic_node(state: AnalysisState) -> Dict[str, Any]:
     )
     duration = time.perf_counter() - start
 
-    rejections = [c for c in critique["critique_log"] if c["verdict"] != "PASS"]
+    critique_log = critique.get("critique_log", [])
+    rejections = [c for c in critique_log if c.get("verdict") != "PASS"]
+    validated = critique.get("validated_findings", [])
     if rejections:
         summary_text = f"Critic reviewed findings: {len(rejections)} claim(s) rewritten to distinguish correlation from causation."
     else:
-        summary_text = f"Critic passed all {len(critique['validated_findings'])} findings with validated evidence attribution."
+        summary_text = f"Critic passed all {len(validated)} findings with validated evidence attribution."
 
     trace = _add_trace(
         state,
@@ -158,11 +160,11 @@ def critic_node(state: AnalysisState) -> Dict[str, Any]:
     )
 
     return {
-        "validated_findings": critique["validated_findings"],
-        "hypotheses": critique["hypotheses"],
-        "critic_findings": critique["critique_log"],
-        "needs_replanning": critique["needs_replanning"],
-        "replan_reason": critique["replan_reason"],
+        "validated_findings": validated,
+        "hypotheses": critique.get("hypotheses", []),
+        "critic_findings": critique_log,
+        "needs_replanning": critique.get("needs_replanning", False),
+        "replan_reason": critique.get("replan_reason"),
         "agent_trace": trace,
     }
 
