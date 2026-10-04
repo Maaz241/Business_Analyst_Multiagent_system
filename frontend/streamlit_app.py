@@ -840,10 +840,9 @@ DEMO_QUESTIONS = [
     "Which products performed best across categories?",
     "Which products experienced the largest decline?",
     "Which countries have high revenue but poor growth?",
-    "What customer segments are changing?",
     "What internal business events could explain the decline?",
-    "Give me evidence for every major conclusion.",
     "What should management investigate next?",
+    "Give me evidence for every major conclusion.",
     "Separate facts, hypotheses and recommendations for Q3.",
 ]
 
