@@ -42,8 +42,8 @@ APP_VERSION: str = "2.0.0"
 
 # Gemini Model Settings
 GEMINI_API_KEY: str = get_secret("GEMINI_API_KEY", "")
-GEMINI_MODEL: str = get_secret("GEMINI_MODEL", "gemini-2.5-flash")
-GEMINI_FALLBACK_MODEL: str = get_secret("GEMINI_FALLBACK_MODEL", "gemini-2.5-flash-lite")
+GEMINI_MODEL: str = get_secret("GEMINI_MODEL", "gemini-3.8-flash")
+GEMINI_FALLBACK_MODEL: str = get_secret("GEMINI_FALLBACK_MODEL", "gemini-flash-latest")
 GEMINI_EMBEDDING_MODEL: str = get_secret("GEMINI_EMBEDDING_MODEL", "gemini-embedding-001")
 
 # Agent & Workflow Limits

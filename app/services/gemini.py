@@ -147,22 +147,42 @@ class GeminiService:
         )
         return response.text or ""
 
-    def embed_texts(self, texts: List[str], model: Optional[str] = None) -> List[List[float]]:
-        """Generate embeddings for a list of text strings."""
+    def generate_json(self, prompt: str) -> Any:
+        """Generate structured JSON output using Gemini."""
         if not self.is_configured():
-            # Return deterministic fallback embeddings if API not configured
+            return None
+        config = types.GenerateContentConfig(
+            temperature=0.1,
+            response_mime_type="application/json",
+        )
+        try:
+            raw = self._call_generate(self.primary_model, prompt, config)
+            return json.loads(raw)
+        except Exception as e:
+            try:
+                raw = self._call_generate(self.fallback_model, prompt, config)
+                return json.loads(raw)
+            except Exception as err:
+                logger.warning("Gemini generate_json fallback failed: %s", err)
+                return None
+
+    def embed_texts(self, texts: List[str], model: Optional[str] = None) -> List[List[float]]:
+        """Generate embeddings for a list of text strings (dimension 768)."""
+        if not self.is_configured():
             logger.warning("Generating offline pseudo-embeddings since Gemini API is not configured.")
             return [self._pseudo_embed(t) for t in texts]
 
         model_name = model or self.embedding_model
         embeddings: List[List[float]] = []
 
-        # Batch embed or embed iteratively
+        config = types.EmbedContentConfig(output_dimensionality=768)
+
         for chunk in texts:
             try:
                 res = self._client.models.embed_content(
                     model=model_name,
                     contents=chunk,
+                    config=config,
                 )
                 if hasattr(res, "embedding") and hasattr(res.embedding, "values"):
                     embeddings.append(res.embedding.values)

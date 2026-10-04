@@ -1,7 +1,7 @@
 """
 RAG / Business Knowledge Analyst Agent.
 Interrogates internal corporate knowledge (PDFs/DOCX strategy documents and notes).
-Extracts verified facts, management targets, operational context, and policies.
+Extracts verified facts, management targets, operational context, and policies dynamically.
 Never makes causal assertions beyond what is documented.
 """
 
@@ -10,11 +10,15 @@ import time
 from typing import Dict, Any, List, Optional
 
 from app.tools.rag import search_company_knowledge
+from app.services.gemini import get_gemini_service
 from app.utils.logging import log_agent_step, logger
 
 
 class RAGAnalystAgent:
     """Specialist agent querying internal corporate business knowledge."""
+
+    def __init__(self):
+        self.gemini = get_gemini_service()
 
     def run(self, question: str, plan_tasks: List[Dict[str, Any]], iteration: int = 0) -> Dict[str, Any]:
         """
@@ -26,26 +30,38 @@ class RAGAnalystAgent:
         evidence_list: List[Dict[str, Any]] = []
         findings: List[Dict[str, Any]] = []
 
-        q_lower = question.lower()
-
-        # Determine search queries based on question and plan
+        # 1. Determine search queries dynamically
         search_queries = [question]
-        if "q3" in q_lower or "decline" in q_lower or "revenue" in q_lower:
-            search_queries.extend([
-                "Q3 2011 operational events and management observations",
-                "APAC distributor transition regional strategy",
-                "Electronics product availability inventory constraints",
-                "Marketing spend and promotional discounts posture",
-            ])
-        elif "product" in q_lower or "category" in q_lower:
-            search_queries.append("Product category strategy performance evaluation")
-        elif "target" in q_lower or "kpi" in q_lower:
-            search_queries.append("Corporate management targets and KPI definitions")
+
+        if self.gemini.is_configured():
+            try:
+                gen_prompt = (
+                    f"Generate 2 concise (3-5 words each) search queries to search internal corporate strategy PDFs "
+                    f"and policy documents for context to answer: '{question}'. "
+                    f"Output only comma-separated queries."
+                )
+                queries_text = self.gemini.generate_text(gen_prompt, temperature=0.1)
+                if queries_text:
+                    for q_item in queries_text.split(","):
+                        cleaned_q = q_item.strip().strip('"').strip("'")
+                        if cleaned_q and len(cleaned_q) > 4:
+                            search_queries.append(cleaned_q)
+            except Exception as e:
+                logger.warning("RAG query generation fallback: %s", e)
+
+        # Keyword heuristics for offline mode
+        q_lower = question.lower()
+        if "policy" in q_lower or "omnichannel" in q_lower or "discount" in q_lower:
+            search_queries.append("Omnichannel retail policy wholesale discounts return thresholds")
+        if "chicago" in q_lower or "fulfillment" in q_lower or "2022" in q_lower or "expansion" in q_lower:
+            search_queries.append("2022 Q4 expansion performance Chicago fulfillment center")
+        if "target" in q_lower or "kpi" in q_lower:
+            search_queries.append("Management targets performance KPI definitions")
 
         with log_agent_step("RAGAnalyst", "Retrieve internal business knowledge", iteration=iteration):
             seen_chunks = set()
 
-            for query in search_queries:
+            for query in search_queries[:3]:
                 search_res = search_company_knowledge(query=query, top_k=3)
                 if search_res.get("status") == "success":
                     for item in search_res.get("citations", []):
@@ -63,40 +79,40 @@ class RAGAnalystAgent:
                                 "details": item["raw_text"][:300] + "...",
                             })
 
-            # Synthesize documented contextual findings
+            # 2. Synthesize documented contextual findings dynamically
             for cit in citations[:4]:
                 src = cit["source_file"]
                 pg = cit["page"]
                 txt = cit["raw_text"]
 
-                title = f"Document Evidence: {src} (p.{pg})"
-                # Summarize key passage as a hypothesis/context item
-                if "distributor" in txt.lower():
-                    title = "Documented APAC Distributor Transition (Q3)"
-                    statement = "Management notes confirm an active transition of the primary APAC distribution partnership occurred during Q3 2011."
-                    classification = "evidence"
-                elif "inventory" in txt.lower() or "electronics" in txt.lower():
-                    title = "Electronics Supply & Inventory Constraints"
-                    statement = "Corporate strategy notes report intermittent inventory constraints and supply delays in the Electronics category during Q3."
-                    classification = "evidence"
-                elif "marketing" in txt.lower() or "conservative" in txt.lower():
-                    title = "Conservative Marketing Posture in Q3"
-                    statement = "Management notes record a deliberate reduction in discretionary marketing spend during Q3 relative to initial plans."
-                    classification = "evidence"
-                else:
-                    statement = txt[:200] + "..."
-                    classification = "evidence"
+                summary_stmt = ""
+                if self.gemini.is_configured():
+                    try:
+                        sum_prompt = (
+                            f"From this document passage (Source: {src}, Page {pg}), extract in 1-2 concise, factual sentences "
+                            f"the operational events, policy rules, or management observations relevant to: '{question}'. "
+                            f"Do not guess or add external facts.\nPassage:\n{txt}"
+                        )
+                        summary_stmt = self.gemini.generate_text(sum_prompt, temperature=0.1)
+                    except Exception as e:
+                        logger.warning("RAG passage summary fallback: %s", e)
 
+                if not summary_stmt or len(summary_stmt) < 20:
+                    # Clean first 2 sentences
+                    sentences = [s.strip() for s in txt.split(".") if len(s.strip()) > 15]
+                    summary_stmt = ". ".join(sentences[:2]) + "." if sentences else txt[:180] + "..."
+
+                title = f"Document Context: {src} (p.{pg})"
                 matching_ev = [e["id"] for e in evidence_list if e["source"] == src]
 
                 findings.append({
                     "title": title,
-                    "statement": statement,
+                    "statement": summary_stmt,
                     "metric": None,
                     "value": None,
                     "evidence_ids": matching_ev[:1],
                     "confidence": "Medium",
-                    "classification": classification,
+                    "classification": "evidence",
                 })
 
         duration = time.perf_counter() - start_time
@@ -104,7 +120,7 @@ class RAGAnalystAgent:
 
         return {
             "citations": citations,
-            "evidence": evidence_list,
             "findings": findings,
+            "evidence": evidence_list,
             "duration": round(duration, 3),
         }

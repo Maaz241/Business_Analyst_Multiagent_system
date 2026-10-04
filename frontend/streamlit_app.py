@@ -877,6 +877,9 @@ if run_button or "report_data" in st.session_state:
             st.write("**4.** 🔍 **Critic Agent** — Auditing evidence and rejecting causal leaps...")
             st.write("**5.** 📋 **Executive Report Agent** — Formatting final deliverables...")
 
+            if active_df is not None:
+                set_active_dataset(active_df)
+
             start_time = time.perf_counter()
             results = engine.run(user_query)
             total_time = time.perf_counter() - start_time
@@ -944,38 +947,54 @@ if run_button or "report_data" in st.session_state:
             "📋 Quarterly Trends",
         ])
 
+        chart_df = active_df if active_df is not None else None
+        if chart_df is not None and "year_quarter" in chart_df.columns:
+            ds_quarters = sorted(chart_df["year_quarter"].dropna().unique().tolist())
+        else:
+            meta_info = get_dataset_metadata()
+            ds_quarters = meta_info.get("available_quarters", []) if meta_info else []
+
+        chart_target_q = ds_quarters[-1] if ds_quarters else None
+        chart_base_q = ds_quarters[-2] if len(ds_quarters) >= 2 else chart_target_q
+
         with viz_tabs[0]:
-            st.plotly_chart(chart_revenue_trend(freq="ME"), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_revenue_trend(freq="ME", df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[1]:
-            st.plotly_chart(chart_revenue_by_country(period="2011-Q3", top_n=10), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_revenue_by_country(period=chart_target_q, top_n=10, df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[2]:
-            st.plotly_chart(chart_revenue_by_category(period="2011-Q3"), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_revenue_by_category(period=chart_target_q, df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[3]:
-            st.plotly_chart(chart_period_comparison("2011-Q2", "2011-Q3", dimension="country"), use_container_width=True, config={"displayModeBar": False})
+            if chart_base_q and chart_target_q and chart_base_q != chart_target_q:
+                st.plotly_chart(chart_period_comparison(chart_base_q, chart_target_q, dimension="country", df=chart_df), use_container_width=True, config={"displayModeBar": False})
+            else:
+                st.plotly_chart(chart_revenue_by_country(period=chart_target_q, top_n=10, df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[4]:
-            st.plotly_chart(chart_anomalies(metric="revenue"), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_anomalies(metric="revenue", df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[5]:
-            st.plotly_chart(chart_geo_heatmap(period="2011-Q3"), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_geo_heatmap(period=chart_target_q, df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[6]:
-            st.plotly_chart(chart_rfm_treemap(), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_rfm_treemap(period=chart_target_q, df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[7]:
-            st.plotly_chart(chart_growth_waterfall("2011-Q2", "2011-Q3"), use_container_width=True, config={"displayModeBar": False})
+            if chart_base_q and chart_target_q and chart_base_q != chart_target_q:
+                st.plotly_chart(chart_growth_waterfall(chart_base_q, chart_target_q, df=chart_df), use_container_width=True, config={"displayModeBar": False})
+            else:
+                st.plotly_chart(chart_revenue_trend(freq="ME", df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[8]:
-            st.plotly_chart(chart_forecast(), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_forecast(df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[9]:
-            st.plotly_chart(chart_kpi_sparklines(), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_kpi_sparklines(df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         with viz_tabs[10]:
-            st.plotly_chart(chart_quarterly_trends(), use_container_width=True, config={"displayModeBar": False})
+            st.plotly_chart(chart_quarterly_trends(df=chart_df), use_container_width=True, config={"displayModeBar": False})
 
         st.divider()
 

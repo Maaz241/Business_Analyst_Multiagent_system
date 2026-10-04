@@ -1,27 +1,30 @@
 """
 Executive Report Agent.
-Synthesizes validated quantitative findings, document evidence, and critic reviews
-into a high-impact, professional executive business report.
-Strictly adheres to the BusinessAnalysisReport contract.
+Synthesizes verified findings, evidence chains, interactive charts, and actionable recommendations.
+Generates structured deliverables for C-suite executives and board members dynamically.
+Never invents data or makes unvalidated causal claims.
 """
 
 from __future__ import annotations
+import json
 import time
 from typing import Dict, Any, List, Optional
+from datetime import datetime
+
 from app.models.report import (
     BusinessAnalysisReport,
-    Metric,
     Finding,
     Hypothesis,
     Recommendation,
     Evidence,
+    Metric,
 )
 from app.services.gemini import get_gemini_service
 from app.utils.logging import log_agent_step, logger
 
 
 class ExecutiveReportAgent:
-    """Specialist agent synthesizing validated analytical results into executive deliverables."""
+    """Specialist agent synthesizing final C-suite business briefing."""
 
     def __init__(self):
         self.gemini = get_gemini_service()
@@ -36,46 +39,44 @@ class ExecutiveReportAgent:
         charts: List[str],
         iteration: int = 0,
     ) -> BusinessAnalysisReport:
-        """
-        Synthesize final executive report.
-        """
+        """Produce the final structured executive business analysis report."""
         start_time = time.perf_counter()
 
-        with log_agent_step("ExecutiveReport", "Synthesize executive report", iteration=iteration):
-            # 1. Format Key Metric Cards
-            key_metrics: List[Metric] = [
-                Metric(
-                    name="Quarterly Net Revenue",
-                    value=summary_metrics.get("revenue", "£3.20M"),
-                    delta=summary_metrics.get("growth", "-15.8%"),
-                    context="Q3 2011 reporting period",
-                ),
-                Metric(
-                    name="Completed Orders",
-                    value=str(summary_metrics.get("orders", "42,381")),
-                    delta=summary_metrics.get("order_delta", "-8.2%"),
-                    context="Total distinct completed purchase orders",
-                ),
-                Metric(
-                    name="Average Order Value (AOV)",
-                    value=summary_metrics.get("aov", "£75.50"),
-                    delta=summary_metrics.get("aov_delta", "-7.6%"),
-                    context="Net revenue divided by completed orders",
-                ),
-                Metric(
-                    name="Repeat Customer Rate",
-                    value=summary_metrics.get("repeat_rate", "72.4%"),
-                    delta="-2.6%",
-                    context="Active customers with >1 order in period",
-                ),
-            ]
+        with log_agent_step("ExecutiveReport", "Synthesize executive briefing deliverable", iteration=iteration):
+            # 1. Format Core Metric Cards
+            key_metrics: List[Metric] = []
+            if summary_metrics:
+                key_metrics.append(Metric(
+                    name="Period Revenue",
+                    value=str(summary_metrics.get("revenue", "N/A")),
+                    delta=None,
+                    context=f"Recorded in {summary_metrics.get('period', 'Reporting Period')}",
+                ))
+                key_metrics.append(Metric(
+                    name="Order Count",
+                    value=str(summary_metrics.get("orders", "N/A")),
+                    delta=None,
+                    context="Total completed transactions",
+                ))
+                key_metrics.append(Metric(
+                    name="Average Order Value",
+                    value=str(summary_metrics.get("aov", "N/A")),
+                    delta=None,
+                    context="Basket unit realization",
+                ))
+                key_metrics.append(Metric(
+                    name="Repeat Cust Rate",
+                    value=str(summary_metrics.get("repeat_rate", "N/A")),
+                    delta=None,
+                    context="Customer loyalty index",
+                ))
 
-            # 2. Build Findings and Evidence models
+            # 2. Map Pydantic findings & evidence
             pydantic_findings: List[Finding] = []
             for f in validated_findings:
                 pydantic_findings.append(Finding(
-                    title=f.get("title", "Business Finding"),
-                    statement=f.get("statement", ""),
+                    title=f["title"],
+                    statement=f["statement"],
                     metric=f.get("metric"),
                     value=f.get("value"),
                     evidence_ids=f.get("evidence_ids", []),
@@ -103,76 +104,94 @@ class ExecutiveReportAgent:
                     alternative_explanations=h.get("alternative_explanations", []),
                 ))
 
-            # 3. Actionable Management Recommendations
-            recommendations: List[Recommendation] = [
-                Recommendation(
-                    action="Audit APAC Regional Distributor Performance & Supply Transition",
-                    priority="High",
-                    owner="VP International Operations & Regional Lead",
-                    rationale="Quantitative data confirms a sharp 24% revenue contraction in APAC, coinciding with a documented distributor changeover in Q3 notes.",
-                ),
-                Recommendation(
-                    action="Review Electronics Category Inventory & Backorder Rates",
-                    priority="High",
-                    owner="Category Management & Supply Chain",
-                    rationale="Electronics demonstrated the steepest category revenue drop (-21%), aligned with documented component stock constraints.",
-                ),
-                Recommendation(
-                    action="Evaluate Monthly Marketing ROI vs Customer Acquisition",
-                    priority="Medium",
-                    owner="Head of Growth / Marketing",
-                    rationale="Management noted a more conservative marketing posture in August/September; assess whether reduced top-of-funnel ad spend depressed volume.",
-                ),
-                Recommendation(
-                    action="Enterprise Customer Engagement Review",
-                    priority="Medium",
-                    owner="B2B Account Director",
-                    rationale="High-value and wholesale customers reduced order frequency in late Q3; initiate proactive client outreach.",
-                ),
-            ]
+            # 3. Dynamic Management Recommendations
+            recommendations: List[Recommendation] = []
+            if self.gemini.is_configured():
+                try:
+                    rec_prompt = (
+                        f"Based on the following business analysis for the question '{question}':\n"
+                        f"Quantitative Metrics: {summary_metrics}\n"
+                        f"Findings: {[f.statement for f in pydantic_findings[:5]]}\n"
+                        f"Context: {[h.statement for h in pydantic_hypotheses[:3]]}\n\n"
+                        f"Generate exactly 3-4 prioritized, actionable executive recommendations for management.\n"
+                        f"Output ONLY a valid JSON array of objects with keys: 'action', 'priority' (High/Medium/Low), 'owner', 'rationale'."
+                    )
+                    rec_json = self.gemini.generate_json(rec_prompt)
+                    if isinstance(rec_json, list) and len(rec_json) > 0:
+                        for r in rec_json:
+                            recommendations.append(Recommendation(
+                                action=str(r.get("action", "Operational Review")),
+                                priority=str(r.get("priority", "Medium")),
+                                owner=str(r.get("owner", "Department Lead")),
+                                rationale=str(r.get("rationale", "Derived from validated business findings.")),
+                            ))
+                except Exception as e:
+                    logger.warning("Gemini recommendation generation fallback: %s", e)
 
-            # 4. Standard Limitations per Section 48 & 60
+            if not recommendations:
+                # Dynamic offline recommendations from findings
+                for idx, f in enumerate(pydantic_findings[:3]):
+                    recommendations.append(Recommendation(
+                        action=f"Investigate {f.title}",
+                        priority="High" if idx == 0 else "Medium",
+                        owner="Operations & Analytics Team",
+                        rationale=f"Validated finding indicates: {f.statement[:120]}...",
+                    ))
+                if not recommendations:
+                    recommendations.append(Recommendation(
+                        action="Continuous Operational Performance Audit",
+                        priority="Medium",
+                        owner="Executive Committee",
+                        rationale="Maintain routine quarterly monitoring across core sales channels.",
+                    ))
+
+            # 4. Standard Limitations
             limitations = [
                 "The transaction dataset does not include Cost of Goods Sold (COGS); gross margin and true profitability cannot be directly computed.",
                 "Marketing spend and channel advertising metrics are not available at weekly granularity in the structured data.",
                 "Supplier inventory stockouts and backorder logs are documented qualitatively in management notes rather than transactional records.",
-                "Correlations between internal operational events (e.g., distributor transition) and revenue decline do not constitute isolated statistical causality.",
+                "Correlations between internal operational events and revenue trends do not constitute isolated statistical causality.",
             ]
 
-            # 5. Synthesize Executive Summary
-            exec_summary = (
-                "Executive Summary:\n\n"
-                f"In response to the business inquiry '{question}', NovaMart's multi-agent analysis "
-                "identifies a material performance contraction in Q3 2011, characterized by a 15.8% revenue decline "
-                "relative to Q2 2011.\n\n"
-                "Key findings from deterministic data calculations and corporate governance documents indicate:\n"
-                "• Regional Impact: APAC and international export territories experienced the steepest contraction (-24%), "
-                "coinciding with an active distributor transition noted in internal management memos.\n"
-                "• Category Trends: The Electronics category suffered a 21% decline, consistent with documented intermittent "
-                "inventory and component availability constraints during late summer 2011.\n"
-                "• Commercial Dynamics: A conservative marketing posture and reduced promotional discounting were observed, "
-                "contributing to lower transaction frequency without a collapse in core basket unit prices.\n\n"
-                "Critical Audit Note: These operational events are strongly correlated with the quarterly slowdown but do not "
-                "prove isolated causality. Management is advised to proceed with the four prioritized investigations below."
-            )
-
-            # If Gemini is configured, enhance executive summary polish while keeping all figures intact
+            # 5. Synthesize Executive Summary Dynamically
+            exec_summary = ""
             if self.gemini.is_configured():
                 try:
-                    prompt = (
-                        f"Refine the following executive business summary for a CEO. "
-                        f"Question: {question}\n"
-                        f"Metrics: {summary_metrics}\n"
-                        f"Validated Findings: {[f.statement for f in pydantic_findings[:5]]}\n"
-                        f"Do NOT alter or invent any numbers. Keep the tone professional, evidence-backed, and concise."
+                    summary_prompt = (
+                        f"You are the Executive Report Agent in NovaMart's Autonomous AI Business Analyst system.\n"
+                        f"Produce a rigorous, C-suite executive briefing directly answering the inquiry: '{question}'.\n\n"
+                        f"Active Dataset Metrics: {summary_metrics}\n"
+                        f"Deterministic Findings (DO NOT alter or invent numbers):\n"
+                        + "\n".join([f"- {f.title}: {f.statement}" for f in pydantic_findings[:6]])
+                        + f"\nOperational / Document Context:\n"
+                        + "\n".join([f"- {h.statement}" for h in pydantic_hypotheses[:4]])
+                        + "\n\nInstructions:\n"
+                        "1. Write 2-3 paragraphs of clear executive summary directly answering the question.\n"
+                        "2. Cite the exact figures computed by data tools.\n"
+                        "3. Explicitly note that operational events correlate with trends but do not prove isolated causality.\n"
+                        "4. Maintain a decisive, executive tone."
                     )
-                    enhanced = self.gemini.generate_text(prompt, temperature=0.1)
-                    if enhanced and len(enhanced) > 50:
-                        exec_summary = enhanced
+                    generated_summary = self.gemini.generate_text(summary_prompt, temperature=0.1)
+                    if generated_summary and len(generated_summary) > 80:
+                        exec_summary = generated_summary
                 except Exception as e:
-                    logger.warning("Gemini executive summary enhancement skipped: %s", e)
+                    logger.warning("Gemini executive summary generation fallback: %s", e)
 
-            overall_confidence = "High" if len(pydantic_findings) >= 3 else "Medium"
+            if not exec_summary:
+                # Dynamic offline fallback constructed from actual findings
+                finding_bullets = [f"• {f.title}: {f.statement}" for f in pydantic_findings[:4]]
+                bullets_text = "\n".join(finding_bullets) if finding_bullets else "• Core operational metrics reviewed and confirmed."
+                exec_summary = (
+                    f"Executive Summary:\n\n"
+                    f"In response to the business inquiry '{question}', NovaMart's multi-agent analysis "
+                    f"evaluated transaction performance across {summary_metrics.get('period', 'the active reporting period')}.\n\n"
+                    f"Key findings from deterministic data calculations and corporate governance documents indicate:\n"
+                    f"{bullets_text}\n\n"
+                    f"Critical Audit Note: These operational observations are verified against recorded transaction data. "
+                    f"Management is advised to proceed with the prioritized recommendations below."
+                )
+
+            overall_confidence = "High" if len(pydantic_findings) >= 2 else "Medium"
 
             report = BusinessAnalysisReport(
                 question=question,
@@ -188,5 +207,5 @@ class ExecutiveReportAgent:
             )
 
         duration = time.perf_counter() - start_time
-        logger.info("ExecutiveReport generated report in %.2fs with %d recommendations", duration, len(recommendations))
+        logger.info("ExecutiveReport completed in %.2fs", duration)
         return report
