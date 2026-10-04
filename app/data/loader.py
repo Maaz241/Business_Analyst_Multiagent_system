@@ -56,17 +56,38 @@ class DataLoader:
                 )
 
         logger.info("Loading sales dataset from %s", target_file)
-        df = pd.read_csv(
-            target_file,
-            dtype={
-                "order_id": str,
-                "customer_id": str,
-                "product_id": str,
-                "country": str,
-                "category": str,
-            },
-            parse_dates=["order_date"],
-        )
+        dtype_map = {
+            "order_id": str,
+            "product_id": str,
+            "product_name": str,
+            "customer_id": str,
+            "country": str,
+            "category": str,
+            "sub_category": str,
+            "year_quarter": str,
+            "month_name": str,
+        }
+        try:
+            df = pd.read_csv(
+                target_file,
+                dtype=dtype_map,
+                parse_dates=["order_date"],
+                on_bad_lines="skip",
+                low_memory=False,
+            )
+        except Exception as err:
+            gz_path = self.processed_dir / "sales.csv.gz"
+            if gz_path.exists() and target_file != gz_path:
+                logger.warning("Failed loading %s (%s). Falling back to %s", target_file, err, gz_path)
+                df = pd.read_csv(
+                    gz_path,
+                    dtype=dtype_map,
+                    parse_dates=["order_date"],
+                    on_bad_lines="skip",
+                    low_memory=False,
+                )
+            else:
+                raise
         _GLOBAL_DATA_CACHE[cache_key] = df
         return df
 
