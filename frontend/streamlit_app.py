@@ -414,9 +414,8 @@ div[data-testid="stStatusWidget"] {
 # Cached Resources
 # ═══════════════════════════════════════════════════════════════════
 
-@st.cache_resource
 def get_workflow_engine():
-    """Cache workflow graph compiler."""
+    """Create fresh workflow graph runner."""
     return BusinessAnalysisWorkflow()
 
 
@@ -830,17 +829,23 @@ DEMO_QUESTIONS = [
 
 # Quick inquiry buttons in a cleaner grid
 q_cols = st.columns(3)
-selected_q = None
 for idx, q_text in enumerate(DEMO_QUESTIONS[:9]):
     col = q_cols[idx % 3]
     short_label = f"{'📌' if idx == 0 else '🔎'} {q_text[:50]}..."
     if col.button(short_label, key=f"demo_{idx}", help=q_text, use_container_width=True):
-        selected_q = q_text
+        st.session_state["business_query_input"] = q_text
+        st.session_state["pending_query"] = q_text
+        st.session_state.pop("report_data", None)
+        st.session_state["trigger_analysis"] = True
+        st.rerun()
 
 # Input box
+if "business_query_input" not in st.session_state:
+    st.session_state["business_query_input"] = DEMO_QUESTIONS[0]
+
 user_query = st.text_area(
     "Enter your business question:",
-    value=selected_q or (st.session_state.get("current_query") or DEMO_QUESTIONS[0]),
+    key="business_query_input",
     height=80,
     help="Ask about revenue trends, regional dynamics, category performance, or internal operational events.",
 )
@@ -851,9 +856,13 @@ run_button = st.button("🚀 Run Executive Analysis", type="primary", use_contai
 # Analysis Execution & Results
 # ═══════════════════════════════════════════════════════════════════
 
-if run_button or "report_data" in st.session_state:
-    if run_button:
-        st.session_state["current_query"] = user_query
+should_run = run_button or st.session_state.pop("trigger_analysis", False)
+
+if should_run or "report_data" in st.session_state:
+    if should_run:
+        actual_query = st.session_state.pop("pending_query", None) or st.session_state.get("business_query_input") or user_query
+        st.session_state["business_query_input"] = actual_query
+        st.session_state.pop("report_data", None)
         with st.status("🧠 Multi-Agent Analytics Pipeline Running...", expanded=True) as status:
             st.markdown("""
             <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px;">
@@ -881,7 +890,7 @@ if run_button or "report_data" in st.session_state:
                 set_active_dataset(active_df)
 
             start_time = time.perf_counter()
-            results = engine.run(user_query)
+            results = engine.run(actual_query)
             total_time = time.perf_counter() - start_time
 
             st.session_state["report_data"] = results.get("final_report")

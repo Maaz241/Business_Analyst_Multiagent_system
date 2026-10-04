@@ -54,15 +54,17 @@ class GeminiService:
         else:
             logger.warning("No GEMINI_API_KEY found. Operating in offline/graceful mode.")
 
+        self._quota_exhausted = False
         self._initialized = True
 
     def is_configured(self) -> bool:
-        """Check if a valid Gemini API key is configured."""
-        return bool(self.api_key and self._client)
+        """Check if a valid Gemini API key is configured and quota is healthy."""
+        return bool(self.api_key and self._client and not self._quota_exhausted)
 
     def set_api_key(self, api_key: str):
         """Dynamically update API key (e.g. from UI input)."""
         self.api_key = api_key.strip()
+        self._quota_exhausted = False
         if self.api_key:
             try:
                 self._client = genai.Client(api_key=self.api_key)
@@ -78,9 +80,9 @@ class GeminiService:
         model: Optional[str] = None,
         max_output_tokens: int = 4096,
     ) -> str:
-        """Generate plain text completion with retry and fallback."""
+        """Generate plain text completion with fast fallback."""
         if not self.is_configured():
-            return "Gemini API key is not configured. Please supply an API key in .env or the Streamlit sidebar."
+            return ""
 
         model_name = model or self.primary_model
         config = types.GenerateContentConfig(
@@ -92,12 +94,12 @@ class GeminiService:
         try:
             return self._call_generate(model_name, prompt, config)
         except Exception as primary_err:
-            logger.warning("Primary model %s failed (%s). Retrying with fallback %s...", model_name, primary_err, self.fallback_model)
-            try:
-                return self._call_generate(self.fallback_model, prompt, config)
-            except Exception as fallback_err:
-                logger.error("Fallback model failed: %s", fallback_err)
-                raise RuntimeError(f"Gemini API failure: {fallback_err}") from fallback_err
+            if not self._quota_exhausted:
+                try:
+                    return self._call_generate(self.fallback_model, prompt, config)
+                except Exception as fallback_err:
+                    logger.warning("Fallback model failed: %s", fallback_err)
+            return ""
 
     def generate_structured_output(
         self,
@@ -123,29 +125,31 @@ class GeminiService:
             raw_text = self._call_generate(model_name, prompt, config)
             return response_schema.model_validate_json(raw_text)
         except Exception as e:
-            logger.warning("Structured generation with %s failed (%s). Trying fallback %s...", model_name, e, self.fallback_model)
-            try:
-                raw_text = self._call_generate(self.fallback_model, prompt, config)
-                return response_schema.model_validate_json(raw_text)
-            except Exception as err:
-                logger.error("Structured generation fallback failed: %s", err)
-                raise err
+            if not self._quota_exhausted:
+                try:
+                    raw_text = self._call_generate(self.fallback_model, prompt, config)
+                    return response_schema.model_validate_json(raw_text)
+                except Exception as err:
+                    raise err
+            raise e
 
-    @retry(
-        reraise=True,
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=1, min=2, max=10),
-    )
     def _call_generate(self, model: str, prompt: str, config: types.GenerateContentConfig) -> str:
-        """Internal worker calling Google GenAI API with retry."""
-        if not self._client:
-            raise RuntimeError("GenAI client not initialized.")
-        response = self._client.models.generate_content(
-            model=model,
-            contents=prompt,
-            config=config,
-        )
-        return response.text or ""
+        """Internal worker calling Google GenAI API with instant failure on 429 quota exhaustion."""
+        if not self._client or self._quota_exhausted:
+            raise RuntimeError("GenAI client not initialized or quota exhausted.")
+        try:
+            response = self._client.models.generate_content(
+                model=model,
+                contents=prompt,
+                config=config,
+            )
+            return response.text or ""
+        except Exception as e:
+            err_msg = str(e)
+            if "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg or "quota" in err_msg.lower():
+                logger.warning("Gemini API quota reached (429). Switching instantly to local deterministic mode.")
+                self._quota_exhausted = True
+            raise
 
     def generate_json(self, prompt: str) -> Any:
         """Generate structured JSON output using Gemini."""
@@ -159,12 +163,13 @@ class GeminiService:
             raw = self._call_generate(self.primary_model, prompt, config)
             return json.loads(raw)
         except Exception as e:
-            try:
-                raw = self._call_generate(self.fallback_model, prompt, config)
-                return json.loads(raw)
-            except Exception as err:
-                logger.warning("Gemini generate_json fallback failed: %s", err)
-                return None
+            if not self._quota_exhausted:
+                try:
+                    raw = self._call_generate(self.fallback_model, prompt, config)
+                    return json.loads(raw)
+                except Exception as err:
+                    logger.warning("Gemini generate_json fallback failed: %s", err)
+            return None
 
     def embed_texts(self, texts: List[str], model: Optional[str] = None) -> List[List[float]]:
         """Generate embeddings for a list of text strings (dimension 768)."""

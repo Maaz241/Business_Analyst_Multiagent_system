@@ -19,14 +19,6 @@ from app.agents.executive_report import ExecutiveReportAgent
 from app.utils.logging import AgentTraceEvent, logger
 
 
-# Instantiate agents
-_supervisor = SupervisorAgent()
-_data_analyst = DataAnalystAgent()
-_rag_analyst = RAGAnalystAgent()
-_critic = CriticAgent()
-_executive = ExecutiveReportAgent()
-
-
 def _add_trace(state: AnalysisState, agent: str, action: str, summary: str, tool: str = "", duration: float = 0.0) -> list:
     trace = list(state.get("agent_trace", []))
     event = AgentTraceEvent(
@@ -49,7 +41,8 @@ def supervisor_node(state: AnalysisState) -> Dict[str, Any]:
     iteration = state.get("iteration", 0)
     replan_reason = state.get("replan_reason")
 
-    plan = _supervisor.create_plan(question, iteration=iteration, replan_reason=replan_reason)
+    agent = SupervisorAgent()
+    plan = agent.create_plan(question, iteration=iteration, replan_reason=replan_reason)
     duration = time.perf_counter() - start
 
     action_label = "revised_plan" if iteration > 0 else "created_plan"
@@ -72,7 +65,8 @@ def data_analyst_node(state: AnalysisState) -> Dict[str, Any]:
     plan = state.get("plan", [])
     iteration = state.get("iteration", 0)
 
-    res = _data_analyst.run(question, plan_tasks=plan, iteration=iteration)
+    agent = DataAnalystAgent()
+    res = agent.run(question, plan_tasks=plan, iteration=iteration)
     duration = time.perf_counter() - start
 
     trace = _add_trace(
@@ -106,7 +100,8 @@ def rag_analyst_node(state: AnalysisState) -> Dict[str, Any]:
     plan = state.get("plan", [])
     iteration = state.get("iteration", 0)
 
-    res = _rag_analyst.run(question, plan_tasks=plan, iteration=iteration)
+    agent = RAGAnalystAgent()
+    res = agent.run(question, plan_tasks=plan, iteration=iteration)
     duration = time.perf_counter() - start
 
     trace = _add_trace(
@@ -138,7 +133,8 @@ def critic_node(state: AnalysisState) -> Dict[str, Any]:
     evidence = state.get("evidence", [])
     iteration = state.get("iteration", 0)
 
-    critique = _critic.run(
+    agent = CriticAgent()
+    critique = agent.run(
         question=question,
         data_findings=data_findings,
         rag_findings=rag_findings,
@@ -182,7 +178,8 @@ def executive_report_node(state: AnalysisState) -> Dict[str, Any]:
     charts = state.get("charts", [])
     iteration = state.get("iteration", 0)
 
-    report = _executive.run(
+    agent = ExecutiveReportAgent()
+    report = agent.run(
         question=question,
         validated_findings=val_findings,
         hypotheses=hypotheses,
