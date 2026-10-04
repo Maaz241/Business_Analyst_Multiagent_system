@@ -93,7 +93,8 @@ class DataAnalystAgent:
 
         q_lower = question.lower()
 
-        with log_agent_step("DataAnalyst", "Execute quantitative analysis", iteration=iteration):
+        try:
+          with log_agent_step("DataAnalyst", "Execute quantitative analysis", iteration=iteration):
             # 1. Dataset overview & dynamic period identification
             dataset_meta = inspect_dataset(self.sales_df)
             available_quarters = dataset_meta.get("available_quarters", [])
@@ -398,20 +399,38 @@ class DataAnalystAgent:
                     "classification": "fact",
                 })
 
-        duration = time.perf_counter() - start_time
-        logger.info("DataAnalyst completed in %.2fs with %d findings", duration, len(findings))
+            duration = time.perf_counter() - start_time
+            logger.info("DataAnalyst completed in %.2fs with %d findings", duration, len(findings))
 
-        return {
-            "findings": findings,
-            "tool_results": tool_results,
-            "evidence": evidence_list,
-            "charts": list(set(charts_recommended)),
-            "summary_metrics": {
-                "period": target_period or "All Time",
-                "revenue": q_rev.get("formatted", "N/A"),
-                "orders": q_orders.get("formatted", "N/A"),
-                "aov": q_aov.get("formatted", "N/A"),
-                "repeat_rate": f"{q_cust.get('repeat_customer_rate_pct', 0)}%",
-            },
-            "duration": round(duration, 3),
-        }
+            return {
+                "findings": findings,
+                "tool_results": tool_results,
+                "evidence": evidence_list,
+                "charts": list(set(charts_recommended)),
+                "summary_metrics": {
+                    "period": target_period or "All Time",
+                    "revenue": q_rev.get("formatted", "N/A"),
+                    "orders": q_orders.get("formatted", "N/A"),
+                    "aov": q_aov.get("formatted", "N/A"),
+                    "repeat_rate": f"{q_cust.get('repeat_customer_rate_pct', 0)}%",
+                },
+                "duration": round(duration, 3),
+            }
+
+        except Exception as exc:
+            duration = time.perf_counter() - start_time
+            logger.error("DataAnalyst crashed after %.2fs: %s", duration, exc, exc_info=True)
+            return {
+                "findings": [],
+                "tool_results": [],
+                "evidence": [],
+                "charts": ["revenue_trend"],
+                "summary_metrics": {
+                    "period": "All Time",
+                    "revenue": "N/A",
+                    "orders": "N/A",
+                    "aov": "N/A",
+                    "repeat_rate": "0%",
+                },
+                "duration": round(duration, 3),
+            }

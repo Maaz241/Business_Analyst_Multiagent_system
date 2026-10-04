@@ -83,11 +83,11 @@ def data_analyst_node(state: AnalysisState) -> Dict[str, Any]:
     existing_ev.extend(res.get("evidence", []))
 
     return {
-        "data_findings": res["findings"],
-        "tool_results": res["tool_results"],
+        "data_findings": res.get("findings", []),
+        "tool_results": res.get("tool_results", []),
         "citations": state.get("citations", []),
-        "charts": res["charts"],
-        "summary_metrics": res["summary_metrics"],
+        "charts": res.get("charts", ["revenue_trend"]),
+        "summary_metrics": res.get("summary_metrics", {}),
         "evidence": existing_ev,
         "agent_trace": trace,
     }
