@@ -14,6 +14,12 @@ import numpy as np
 from app.config import CHROMA_DIR, RAG_TOP_K
 from app.rag.ingestion import DocumentChunk, DocumentIngestionPipeline
 from app.rag.embeddings import GeminiEmbeddings
+from app.services.mongo_service import (
+    is_mongo_connected,
+    save_chunks_to_mongo,
+    load_all_chunks_from_mongo,
+    clear_chunks_in_mongo,
+)
 from app.utils.logging import logger
 
 
@@ -98,6 +104,31 @@ class VectorStoreManager:
         self.chroma_client = None
         self.collection = None
         self._init_chroma()
+        self._sync_from_mongo()
+
+    def _sync_from_mongo(self):
+        """Load persistent chunks and embeddings from MongoDB Atlas into memory store."""
+        if not is_mongo_connected():
+            return
+        try:
+            raw_docs = load_all_chunks_from_mongo()
+            if not raw_docs:
+                return
+            chunks = []
+            embeds = []
+            for d in raw_docs:
+                chunks.append(DocumentChunk(
+                    chunk_id=d["chunk_id"],
+                    text=d["text"],
+                    source_file=d.get("source_file", "unknown"),
+                    page=d.get("page", 1),
+                    document_type=d.get("document_type", "Document"),
+                ))
+                embeds.append(d.get("embedding", [0.0] * 768))
+            self.memory_store.add_chunks(chunks, embeds)
+            logger.info("Synced %d chunks from MongoDB Atlas into active vector store.", len(chunks))
+        except Exception as e:
+            logger.warning("Could not sync chunks from MongoDB: %s", e)
 
     def _init_chroma(self):
         """Attempt to initialize ChromaDB; fallback to memory store if unavailable."""
@@ -117,22 +148,27 @@ class VectorStoreManager:
 
     def is_indexed(self) -> bool:
         """Check if vector store contains documents."""
+        if len(self.memory_store.chunks) > 0:
+            return True
         if self.collection is not None:
             try:
                 count = self.collection.count()
                 return count > 0
             except Exception:
                 pass
-        return len(self.memory_store.chunks) > 0
+        return False
 
     def get_document_count(self) -> int:
         """Return number of indexed chunks."""
+        count = len(self.memory_store.chunks)
+        if count > 0:
+            return count
         if self.collection is not None:
             try:
                 return self.collection.count()
             except Exception:
                 pass
-        return len(self.memory_store.chunks)
+        return 0
 
     def build_index(self, chunks: List[DocumentChunk], force_rebuild: bool = False):
         """Build or rebuild vector index from a list of DocumentChunks."""
@@ -149,7 +185,27 @@ class VectorStoreManager:
         self.memory_store = MemoryVectorStore()
         self.memory_store.add_chunks(chunks, embed_vecs)
 
-        # 2. Update ChromaDB if active
+        # 2. Persist to MongoDB Atlas
+        if is_mongo_connected():
+            try:
+                if force_rebuild:
+                    clear_chunks_in_mongo()
+                mongo_payload = [
+                    {
+                        "chunk_id": c.chunk_id,
+                        "text": c.text,
+                        "source_file": c.source_file,
+                        "page": c.page,
+                        "document_type": c.document_type,
+                        "embedding": embed_vecs[i] if i < len(embed_vecs) else [0.0] * 768,
+                    }
+                    for i, c in enumerate(chunks)
+                ]
+                save_chunks_to_mongo(mongo_payload)
+            except Exception as e:
+                logger.warning("Could not persist chunks to MongoDB: %s", e)
+
+        # 3. Update ChromaDB if active
         if self.chroma_client is not None:
             try:
                 if force_rebuild:
@@ -193,6 +249,25 @@ class VectorStoreManager:
         texts = [c.text for c in chunks]
         embed_vecs = self.embeddings.embed_documents(texts)
         self.memory_store.add_chunks(chunks, embed_vecs)
+
+        # Persist to MongoDB Atlas
+        if is_mongo_connected():
+            try:
+                mongo_payload = [
+                    {
+                        "chunk_id": c.chunk_id,
+                        "text": c.text,
+                        "source_file": c.source_file,
+                        "page": c.page,
+                        "document_type": c.document_type,
+                        "embedding": embed_vecs[i] if i < len(embed_vecs) else [0.0] * 768,
+                    }
+                    for i, c in enumerate(chunks)
+                ]
+                save_chunks_to_mongo(mongo_payload)
+            except Exception as e:
+                logger.warning("Could not persist new chunks to MongoDB: %s", e)
+
         if self.collection is not None:
             try:
                 ids = [c.chunk_id for c in chunks]

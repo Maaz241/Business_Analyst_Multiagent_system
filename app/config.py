@@ -60,3 +60,7 @@ DEFAULT_CUSTOMERS_FILE = PROCESSED_DATA_DIR / "customers.csv"
 DEFAULT_PRODUCTS_FILE = PROCESSED_DATA_DIR / "products.csv"
 DEFAULT_TARGETS_FILE = PROCESSED_DATA_DIR / "targets.csv"
 DEFAULT_RAW_FILE = RAW_DATA_DIR / "online_retail_II.xlsx"
+
+# MongoDB Atlas Configuration
+MONGODB_URI: str = get_secret("MONGODB_URI", "")
+MONGODB_DB_NAME: str = get_secret("MONGODB_DB_NAME", "novamart_db")

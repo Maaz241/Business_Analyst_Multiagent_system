@@ -61,6 +61,7 @@ chart_kpi_sparklines = _charts_mod.chart_kpi_sparklines
 get_vector_store = _vstore_mod.get_vector_store
 DocumentIngestionPipeline = _ingest_mod.DocumentIngestionPipeline
 from app.services.gemini import get_gemini_service
+from app.services.mongo_service import is_mongo_connected, save_uploaded_dataset_to_mongo
 from app.utils.formatting import format_currency, format_percent
 
 
@@ -540,7 +541,11 @@ with st.sidebar:
     # Data Layer
     st.markdown("#### 📊 Data Intelligence")
     loader = DataLoader()
-    active_df = get_active_dataset()
+    active_df = st.session_state.get("active_df")
+    if active_df is not None:
+        set_active_dataset(active_df)
+    else:
+        active_df = get_active_dataset()
 
     if active_df is not None:
         c_rows = len(active_df)
@@ -628,6 +633,8 @@ with st.sidebar:
                     st.session_state["active_df"] = c_df
                     st.session_state["custom_dataset_name"] = uploaded_data.name
                     st.session_state["last_uploaded_data"] = uploaded_data.name
+                    if is_mongo_connected():
+                        save_uploaded_dataset_to_mongo(uploaded_data.name, c_df)
                     st.success(f"✓ Loaded {len(c_df):,} rows from {uploaded_data.name}!")
                     st.rerun()
                 except Exception as e:
@@ -639,6 +646,8 @@ with st.sidebar:
     st.markdown("#### 📚 Knowledge Base (RAG)")
     vstore = get_vector_store()
     chunk_count = vstore.get_document_count()
+    mongo_status = "🍃 MongoDB Atlas" if is_mongo_connected() else "Local Vector Store"
+    mongo_color = "#10B981" if is_mongo_connected() else "#818CF8"
 
     st.markdown(f"""
     <div class="glass-card" style="padding: 14px;">
@@ -647,8 +656,8 @@ with st.sidebar:
             <span style="color: #818CF8; font-weight: 700;">{chunk_count}</span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="color: #94A3B8; font-size: 0.8rem;">Knowledge Base</span>
-            <span style="color: #64748B; font-size: 0.8rem;">ChromaDB Active</span>
+            <span style="color: #94A3B8; font-size: 0.8rem;">Storage Provider</span>
+            <span style="color: {mongo_color}; font-size: 0.8rem; font-weight: 600;">{mongo_status}</span>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -709,6 +718,7 @@ with st.sidebar:
                     with open(csv_path, "rb") as f:
                         c_df, _ = loader.load_custom_file(f, "novamart_q4_2022_sales.csv")
                     set_active_dataset(c_df)
+                    st.session_state["active_df"] = c_df
                     st.session_state["custom_dataset_name"] = "novamart_q4_2022_sales.csv"
                     st.rerun()
 
@@ -723,6 +733,13 @@ with st.sidebar:
                         mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                         use_container_width=True,
                     )
+                if st.button("⚡ Quick-Load 2022 Sample (Excel)", use_container_width=True):
+                    with open(xlsx_path, "rb") as f:
+                        c_df, _ = loader.load_custom_file(f, "novamart_retail_sample_2022.xlsx")
+                    set_active_dataset(c_df)
+                    st.session_state["active_df"] = c_df
+                    st.session_state["custom_dataset_name"] = "novamart_retail_sample_2022.xlsx"
+                    st.rerun()
 
             # PDF Download
             pdf_path = test_dir / "novamart_q4_2022_executive_memo.pdf"

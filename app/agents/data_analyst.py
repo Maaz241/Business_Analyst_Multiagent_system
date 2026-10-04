@@ -233,6 +233,35 @@ class DataAnalystAgent:
             tool_results.append({"tool": "customer_metrics", "output": q_cust})
             charts_recommended.extend(["revenue_by_country", "revenue_by_category"])
 
+            # Ensure country-level findings exist even if single-period or no comparison
+            has_geo_finding = any("Regional Shift" in f["title"] or "Territory" in f["title"] for f in findings)
+            if not has_geo_finding:
+                geo_data = revenue_by_country(period=target_period, df=self.sales_df)
+                tool_results.append({"tool": "revenue_by_country", "output": geo_data})
+                top_countries = geo_data.get("countries", [])[:3]
+                for c in top_countries:
+                    ev_id_geo = f"EV-CALC-{len(evidence_list)+1:02d}"
+                    evidence_list.append({
+                        "id": ev_id_geo,
+                        "source": source_label,
+                        "source_type": "data_calculation",
+                        "details": f"Country: {c['country']}, Revenue: {format_currency(c['revenue'])}, Share: {c['revenue_share_pct']}%",
+                        "calculation": f"revenue_by_country(period='{target_period}')",
+                    })
+                    cnt = c.get("orders", c.get("order_count", 0))
+                    findings.append({
+                        "title": f"Territory Distribution: {c['country']}",
+                        "statement": (
+                            f"{c['country']} generated {format_currency(c['revenue'])} ({c['revenue_share_pct']}% of total revenue) "
+                            f"across {cnt:,} orders in {target_period or 'the active reporting period'}."
+                        ),
+                        "metric": f"{c['country']} Share",
+                        "value": f"{c['revenue_share_pct']}%",
+                        "evidence_ids": [ev_id_geo],
+                        "confidence": "High",
+                        "classification": "fact",
+                    })
+
             # 4. Product Level Analysis
             if any(term in q_lower for term in ["product", "sku", "item", "category", "best", "worst", "top", "bottom"]):
                 top_p = top_products(period=target_period, n=5, df=self.sales_df)
