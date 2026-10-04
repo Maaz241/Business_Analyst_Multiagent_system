@@ -373,6 +373,68 @@ class DataAnalystAgent:
                     "classification": "fact",
                 })
 
+                # Individual segment details
+                segments = rfm_res.get("segments", [])
+                for seg in segments[:3]:
+                    s_name = seg.get("segment", "General")
+                    s_count = int(seg.get("customer_count", 0) or 0)
+                    s_monetary = float(seg.get("avg_monetary", 0.0) or 0.0)
+                    ev_seg = f"EV-CALC-{len(evidence_list)+1:02d}"
+                    evidence_list.append({
+                        "id": ev_seg,
+                        "source": source_label,
+                        "source_type": "data_calculation",
+                        "details": f"Segment {s_name}: {s_count:,} customers, Avg Spend: {format_currency(s_monetary)}",
+                        "calculation": f"rfm_segmentation(period='{target_period}')",
+                    })
+                    findings.append({
+                        "title": f"Customer Segment: {s_name}",
+                        "statement": (
+                            f"The '{s_name}' segment comprises {s_count:,} accounts "
+                            f"with an average monetary spend of {format_currency(s_monetary)} in {target_period or 'the active period'}."
+                        ),
+                        "metric": f"{s_name} Accounts",
+                        "value": f"{s_count:,}",
+                        "evidence_ids": [ev_seg],
+                        "confidence": "High",
+                        "classification": "fact",
+                    })
+
+                # Period-over-period segment shifts if comparing periods
+                if base_period and target_period and base_period != target_period:
+                    try:
+                        base_rfm = rfm_segmentation(period=base_period, df=self.sales_df)
+                        base_dist = base_rfm.get("segment_distribution", {})
+                        target_dist = rfm_res.get("segment_distribution", {})
+                        for s_name in ["Champions", "At Risk", "Loyal", "Needs Attention"]:
+                            if s_name in target_dist or s_name in base_dist:
+                                b_c = int(base_dist.get(s_name, 0) or 0)
+                                t_c = int(target_dist.get(s_name, 0) or 0)
+                                diff_c = t_c - b_c
+                                ev_diff = f"EV-CALC-{len(evidence_list)+1:02d}"
+                                evidence_list.append({
+                                    "id": ev_diff,
+                                    "source": source_label,
+                                    "source_type": "data_calculation",
+                                    "details": f"Segment {s_name} shift: {base_period}={b_c}, {target_period}={t_c}, Change={diff_c:+d}",
+                                    "calculation": f"rfm_shift({base_period}, {target_period})",
+                                })
+                                dir_str = "increased" if diff_c >= 0 else "decreased"
+                                findings.append({
+                                    "title": f"Segment Shift: {s_name}",
+                                    "statement": (
+                                        f"The '{s_name}' customer tier {dir_str} by {abs(diff_c):,} accounts "
+                                        f"(from {b_c:,} in {base_period} to {t_c:,} in {target_period})."
+                                    ),
+                                    "metric": f"{s_name} Delta",
+                                    "value": f"{diff_c:+d}",
+                                    "evidence_ids": [ev_diff],
+                                    "confidence": "High",
+                                    "classification": "fact",
+                                })
+                    except Exception as exc:
+                        logger.warning("Error calculating RFM shift: %s", exc)
+
             # 6. Statistical Anomalies
             anoms = detect_anomalies(metric="revenue", freq="W", df=self.sales_df)
             tool_results.append({"tool": "detect_anomalies", "output": anoms})
