@@ -1,0 +1,651 @@
+order_id,order_date,customer_id,product_id,product_name,category,country,quantity,unit_price,revenue,year,quarter,month,month_name
+ORD-2022-10205,2022-10-01,CUST-2022-0066,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Netherlands,4,24.99,99.96,2022,2022-Q4,10,October
+ORD-2022-10318,2022-10-01,CUST-2022-0052,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Germany,8,19.95,159.6,2022,2022-Q4,10,October
+ORD-2022-10328,2022-10-01,CUST-2022-0069,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,4,27.5,110.0,2022,2022-Q4,10,October
+ORD-2022-10345,2022-10-01,CUST-2022-0140,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,2,49.0,98.0,2022,2022-Q4,10,October
+ORD-2022-10370,2022-10-01,CUST-2022-0039,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,4,14.0,56.0,2022,2022-Q4,10,October
+ORD-2022-10397,2022-10-01,CUST-2022-0085,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Australia,7,45.0,315.0,2022,2022-Q4,10,October
+ORD-2022-10514,2022-10-01,CUST-2022-0046,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,3,32.0,96.0,2022,2022-Q4,10,October
+ORD-2022-10620,2022-10-01,CUST-2022-0096,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,5,18.0,90.0,2022,2022-Q4,10,October
+ORD-2022-10036,2022-10-02,CUST-2022-0124,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Germany,1,34.5,34.5,2022,2022-Q4,10,October
+ORD-2022-10146,2022-10-02,CUST-2022-0068,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,3,19.95,59.85,2022,2022-Q4,10,October
+ORD-2022-10371,2022-10-02,CUST-2022-0159,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,8,55.0,440.0,2022,2022-Q4,10,October
+ORD-2022-10373,2022-10-02,CUST-2022-0074,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,3,42.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10449,2022-10-02,CUST-2022-0109,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Japan,1,49.0,49.0,2022,2022-Q4,10,October
+ORD-2022-10462,2022-10-02,CUST-2022-0102,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United States,1,32.0,32.0,2022,2022-Q4,10,October
+ORD-2022-10563,2022-10-02,CUST-2022-0165,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Netherlands,5,24.99,124.95,2022,2022-Q4,10,October
+ORD-2022-10023,2022-10-03,CUST-2022-0062,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,2,49.0,98.0,2022,2022-Q4,10,October
+ORD-2022-10291,2022-10-03,CUST-2022-0062,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,3,65.0,195.0,2022,2022-Q4,10,October
+ORD-2022-10339,2022-10-03,CUST-2022-0149,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,1,45.0,45.0,2022,2022-Q4,10,October
+ORD-2022-10374,2022-10-03,CUST-2022-0135,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United States,2,14.0,28.0,2022,2022-Q4,10,October
+ORD-2022-10443,2022-10-03,CUST-2022-0110,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Germany,2,34.5,69.0,2022,2022-Q4,10,October
+ORD-2022-10562,2022-10-03,CUST-2022-0154,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,1,65.0,65.0,2022,2022-Q4,10,October
+ORD-2022-10058,2022-10-04,CUST-2022-0064,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Australia,7,24.99,174.93,2022,2022-Q4,10,October
+ORD-2022-10136,2022-10-04,CUST-2022-0142,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,5,29.5,147.5,2022,2022-Q4,10,October
+ORD-2022-10240,2022-10-04,CUST-2022-0061,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,7,16.5,115.5,2022,2022-Q4,10,October
+ORD-2022-10402,2022-10-04,CUST-2022-0178,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Netherlands,8,14.0,112.0,2022,2022-Q4,10,October
+ORD-2022-10495,2022-10-04,CUST-2022-0027,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,4,28.0,112.0,2022,2022-Q4,10,October
+ORD-2022-10013,2022-10-05,CUST-2022-0146,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,5,27.5,137.5,2022,2022-Q4,10,October
+ORD-2022-10264,2022-10-05,CUST-2022-0094,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Netherlands,4,38.0,152.0,2022,2022-Q4,10,October
+ORD-2022-10322,2022-10-05,CUST-2022-0086,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10503,2022-10-05,CUST-2022-0141,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,8,24.99,199.92,2022,2022-Q4,10,October
+ORD-2022-10521,2022-10-05,CUST-2022-0157,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United States,6,55.0,330.0,2022,2022-Q4,10,October
+ORD-2022-10583,2022-10-05,CUST-2022-0136,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United States,1,24.99,24.99,2022,2022-Q4,10,October
+ORD-2022-10052,2022-10-06,CUST-2022-0068,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,1,49.0,49.0,2022,2022-Q4,10,October
+ORD-2022-10092,2022-10-06,CUST-2022-0160,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Australia,1,34.5,34.5,2022,2022-Q4,10,October
+ORD-2022-10252,2022-10-06,CUST-2022-0176,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Australia,3,18.0,54.0,2022,2022-Q4,10,October
+ORD-2022-10313,2022-10-06,CUST-2022-0168,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United States,6,22.5,135.0,2022,2022-Q4,10,October
+ORD-2022-10500,2022-10-06,CUST-2022-0111,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United States,3,16.5,49.5,2022,2022-Q4,10,October
+ORD-2022-10602,2022-10-06,CUST-2022-0085,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,France,3,34.5,103.5,2022,2022-Q4,10,October
+ORD-2022-10609,2022-10-06,CUST-2022-0174,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10624,2022-10-06,CUST-2022-0130,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10642,2022-10-06,CUST-2022-0150,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,5,45.0,225.0,2022,2022-Q4,10,October
+ORD-2022-10644,2022-10-06,CUST-2022-0161,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Netherlands,1,24.99,24.99,2022,2022-Q4,10,October
+ORD-2022-10091,2022-10-07,CUST-2022-0167,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Netherlands,2,32.0,64.0,2022,2022-Q4,10,October
+ORD-2022-10442,2022-10-07,CUST-2022-0118,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Netherlands,3,89.99,269.97,2022,2022-Q4,10,October
+ORD-2022-10478,2022-10-07,CUST-2022-0018,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Japan,1,29.5,29.5,2022,2022-Q4,10,October
+ORD-2022-10533,2022-10-07,CUST-2022-0001,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,3,28.0,84.0,2022,2022-Q4,10,October
+ORD-2022-10550,2022-10-07,CUST-2022-0078,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,6,45.0,270.0,2022,2022-Q4,10,October
+ORD-2022-10576,2022-10-07,CUST-2022-0175,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,1,65.0,65.0,2022,2022-Q4,10,October
+ORD-2022-10618,2022-10-07,CUST-2022-0159,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,France,6,19.95,119.7,2022,2022-Q4,10,October
+ORD-2022-10033,2022-10-08,CUST-2022-0049,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,2,45.0,90.0,2022,2022-Q4,10,October
+ORD-2022-10192,2022-10-08,CUST-2022-0171,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,7,22.5,157.5,2022,2022-Q4,10,October
+ORD-2022-10221,2022-10-08,CUST-2022-0022,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Japan,6,16.5,99.0,2022,2022-Q4,10,October
+ORD-2022-10341,2022-10-08,CUST-2022-0047,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,1,65.0,65.0,2022,2022-Q4,10,October
+ORD-2022-10356,2022-10-08,CUST-2022-0066,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Germany,3,28.0,84.0,2022,2022-Q4,10,October
+ORD-2022-10435,2022-10-08,CUST-2022-0083,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,3,32.0,96.0,2022,2022-Q4,10,October
+ORD-2022-10513,2022-10-08,CUST-2022-0123,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,4,55.0,220.0,2022,2022-Q4,10,October
+ORD-2022-10556,2022-10-08,CUST-2022-0093,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United Kingdom,8,38.0,304.0,2022,2022-Q4,10,October
+ORD-2022-10606,2022-10-08,CUST-2022-0124,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United States,7,38.0,266.0,2022,2022-Q4,10,October
+ORD-2022-10029,2022-10-09,CUST-2022-0072,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,49.0,49.0,2022,2022-Q4,10,October
+ORD-2022-10047,2022-10-09,CUST-2022-0140,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,5,24.99,124.95,2022,2022-Q4,10,October
+ORD-2022-10186,2022-10-09,CUST-2022-0153,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,6,24.99,149.94,2022,2022-Q4,10,October
+ORD-2022-10249,2022-10-09,CUST-2022-0100,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10403,2022-10-09,CUST-2022-0062,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,France,3,28.0,84.0,2022,2022-Q4,10,October
+ORD-2022-10035,2022-10-10,CUST-2022-0139,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,1,16.5,16.5,2022,2022-Q4,10,October
+ORD-2022-10075,2022-10-10,CUST-2022-0099,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Netherlands,4,28.0,112.0,2022,2022-Q4,10,October
+ORD-2022-10216,2022-10-10,CUST-2022-0149,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Netherlands,8,19.95,159.6,2022,2022-Q4,10,October
+ORD-2022-10340,2022-10-10,CUST-2022-0139,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Netherlands,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10359,2022-10-10,CUST-2022-0086,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,4,55.0,220.0,2022,2022-Q4,10,October
+ORD-2022-10448,2022-10-10,CUST-2022-0114,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,4,55.0,220.0,2022,2022-Q4,10,October
+ORD-2022-10008,2022-10-11,CUST-2022-0012,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Netherlands,4,18.0,72.0,2022,2022-Q4,10,October
+ORD-2022-10410,2022-10-11,CUST-2022-0117,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,34.5,69.0,2022,2022-Q4,10,October
+ORD-2022-10498,2022-10-11,CUST-2022-0051,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Japan,1,22.5,22.5,2022,2022-Q4,10,October
+ORD-2022-10006,2022-10-12,CUST-2022-0155,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,6,16.5,99.0,2022,2022-Q4,10,October
+ORD-2022-10130,2022-10-12,CUST-2022-0172,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,7,45.0,315.0,2022,2022-Q4,10,October
+ORD-2022-10191,2022-10-12,CUST-2022-0143,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,6,16.5,99.0,2022,2022-Q4,10,October
+ORD-2022-10199,2022-10-12,CUST-2022-0041,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Germany,7,19.95,139.65,2022,2022-Q4,10,October
+ORD-2022-10439,2022-10-12,CUST-2022-0102,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,2,45.0,90.0,2022,2022-Q4,10,October
+ORD-2022-10445,2022-10-12,CUST-2022-0167,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,2,18.0,36.0,2022,2022-Q4,10,October
+ORD-2022-10530,2022-10-12,CUST-2022-0168,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,1,27.5,27.5,2022,2022-Q4,10,October
+ORD-2022-10615,2022-10-12,CUST-2022-0128,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,6,28.0,168.0,2022,2022-Q4,10,October
+ORD-2022-10617,2022-10-12,CUST-2022-0094,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Japan,8,32.0,256.0,2022,2022-Q4,10,October
+ORD-2022-10317,2022-10-13,CUST-2022-0036,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,8,45.0,360.0,2022,2022-Q4,10,October
+ORD-2022-10327,2022-10-13,CUST-2022-0064,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,United Kingdom,8,29.5,236.0,2022,2022-Q4,10,October
+ORD-2022-10527,2022-10-13,CUST-2022-0009,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,3,14.0,42.0,2022,2022-Q4,10,October
+ORD-2022-10539,2022-10-13,CUST-2022-0151,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10002,2022-10-14,CUST-2022-0024,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,2,42.0,84.0,2022,2022-Q4,10,October
+ORD-2022-10097,2022-10-14,CUST-2022-0110,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,1,22.5,22.5,2022,2022-Q4,10,October
+ORD-2022-10099,2022-10-14,CUST-2022-0112,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,8,45.0,360.0,2022,2022-Q4,10,October
+ORD-2022-10131,2022-10-14,CUST-2022-0074,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,France,7,24.99,174.93,2022,2022-Q4,10,October
+ORD-2022-10406,2022-10-14,CUST-2022-0012,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,France,3,24.99,74.97,2022,2022-Q4,10,October
+ORD-2022-10451,2022-10-14,CUST-2022-0035,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,5,18.0,90.0,2022,2022-Q4,10,October
+ORD-2022-10490,2022-10-14,CUST-2022-0081,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Germany,3,38.0,114.0,2022,2022-Q4,10,October
+ORD-2022-10547,2022-10-14,CUST-2022-0106,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United States,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10020,2022-10-15,CUST-2022-0068,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,3,27.5,82.5,2022,2022-Q4,10,October
+ORD-2022-10115,2022-10-15,CUST-2022-0162,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10133,2022-10-15,CUST-2022-0049,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,8,16.5,132.0,2022,2022-Q4,10,October
+ORD-2022-10165,2022-10-15,CUST-2022-0058,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Netherlands,3,16.5,49.5,2022,2022-Q4,10,October
+ORD-2022-10182,2022-10-15,CUST-2022-0132,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Netherlands,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10210,2022-10-15,CUST-2022-0159,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,6,16.5,99.0,2022,2022-Q4,10,October
+ORD-2022-10305,2022-10-15,CUST-2022-0039,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United Kingdom,8,38.0,304.0,2022,2022-Q4,10,October
+ORD-2022-10347,2022-10-15,CUST-2022-0005,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Netherlands,3,65.0,195.0,2022,2022-Q4,10,October
+ORD-2022-10401,2022-10-15,CUST-2022-0141,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,France,3,55.0,165.0,2022,2022-Q4,10,October
+ORD-2022-10473,2022-10-15,CUST-2022-0004,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,1,55.0,55.0,2022,2022-Q4,10,October
+ORD-2022-10516,2022-10-15,CUST-2022-0170,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Netherlands,6,22.5,135.0,2022,2022-Q4,10,October
+ORD-2022-10109,2022-10-16,CUST-2022-0177,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Netherlands,2,24.99,49.98,2022,2022-Q4,10,October
+ORD-2022-10344,2022-10-16,CUST-2022-0058,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,7,55.0,385.0,2022,2022-Q4,10,October
+ORD-2022-10025,2022-10-17,CUST-2022-0156,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,5,14.0,70.0,2022,2022-Q4,10,October
+ORD-2022-10055,2022-10-17,CUST-2022-0011,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United States,2,49.0,98.0,2022,2022-Q4,10,October
+ORD-2022-10162,2022-10-17,CUST-2022-0045,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Netherlands,2,49.0,98.0,2022,2022-Q4,10,October
+ORD-2022-10177,2022-10-17,CUST-2022-0060,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,France,4,38.0,152.0,2022,2022-Q4,10,October
+ORD-2022-10179,2022-10-17,CUST-2022-0007,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,2,32.0,64.0,2022,2022-Q4,10,October
+ORD-2022-10180,2022-10-17,CUST-2022-0005,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,1,49.0,49.0,2022,2022-Q4,10,October
+ORD-2022-10497,2022-10-17,CUST-2022-0166,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,France,6,19.95,119.7,2022,2022-Q4,10,October
+ORD-2022-10520,2022-10-17,CUST-2022-0146,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Australia,7,38.0,266.0,2022,2022-Q4,10,October
+ORD-2022-10573,2022-10-17,CUST-2022-0057,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,6,32.0,192.0,2022,2022-Q4,10,October
+ORD-2022-10332,2022-10-18,CUST-2022-0156,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Netherlands,8,14.0,112.0,2022,2022-Q4,10,October
+ORD-2022-10342,2022-10-18,CUST-2022-0097,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,7,45.0,315.0,2022,2022-Q4,10,October
+ORD-2022-10496,2022-10-18,CUST-2022-0057,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Australia,1,89.99,89.99,2022,2022-Q4,10,October
+ORD-2022-10552,2022-10-18,CUST-2022-0107,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,6,27.5,165.0,2022,2022-Q4,10,October
+ORD-2022-10555,2022-10-18,CUST-2022-0052,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Australia,1,34.5,34.5,2022,2022-Q4,10,October
+ORD-2022-10578,2022-10-18,CUST-2022-0118,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Japan,7,24.99,174.93,2022,2022-Q4,10,October
+ORD-2022-10625,2022-10-18,CUST-2022-0111,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,1,16.5,16.5,2022,2022-Q4,10,October
+ORD-2022-10629,2022-10-18,CUST-2022-0141,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Australia,5,19.95,99.75,2022,2022-Q4,10,October
+ORD-2022-10015,2022-10-19,CUST-2022-0138,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Netherlands,4,32.0,128.0,2022,2022-Q4,10,October
+ORD-2022-10074,2022-10-19,CUST-2022-0157,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Japan,1,89.99,89.99,2022,2022-Q4,10,October
+ORD-2022-10198,2022-10-19,CUST-2022-0008,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Netherlands,3,16.5,49.5,2022,2022-Q4,10,October
+ORD-2022-10226,2022-10-19,CUST-2022-0022,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,7,18.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10239,2022-10-19,CUST-2022-0090,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,4,16.5,66.0,2022,2022-Q4,10,October
+ORD-2022-10288,2022-10-19,CUST-2022-0158,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,2,89.99,179.98,2022,2022-Q4,10,October
+ORD-2022-10365,2022-10-19,CUST-2022-0149,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United States,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10579,2022-10-19,CUST-2022-0162,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Germany,2,32.0,64.0,2022,2022-Q4,10,October
+ORD-2022-10634,2022-10-19,CUST-2022-0042,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,1,89.99,89.99,2022,2022-Q4,10,October
+ORD-2022-10022,2022-10-20,CUST-2022-0126,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,1,32.0,32.0,2022,2022-Q4,10,October
+ORD-2022-10054,2022-10-20,CUST-2022-0111,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10093,2022-10-20,CUST-2022-0145,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,8,29.5,236.0,2022,2022-Q4,10,October
+ORD-2022-10194,2022-10-20,CUST-2022-0143,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,2,14.0,28.0,2022,2022-Q4,10,October
+ORD-2022-10230,2022-10-20,CUST-2022-0139,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,49.0,49.0,2022,2022-Q4,10,October
+ORD-2022-10375,2022-10-20,CUST-2022-0069,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Australia,5,29.5,147.5,2022,2022-Q4,10,October
+ORD-2022-10465,2022-10-20,CUST-2022-0112,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,2,27.5,55.0,2022,2022-Q4,10,October
+ORD-2022-10041,2022-10-21,CUST-2022-0018,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Australia,1,42.0,42.0,2022,2022-Q4,10,October
+ORD-2022-10053,2022-10-21,CUST-2022-0177,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,1,28.0,28.0,2022,2022-Q4,10,October
+ORD-2022-10121,2022-10-21,CUST-2022-0121,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10201,2022-10-21,CUST-2022-0109,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,2,89.99,179.98,2022,2022-Q4,10,October
+ORD-2022-10232,2022-10-21,CUST-2022-0012,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Netherlands,3,55.0,165.0,2022,2022-Q4,10,October
+ORD-2022-10236,2022-10-21,CUST-2022-0014,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Australia,3,55.0,165.0,2022,2022-Q4,10,October
+ORD-2022-10290,2022-10-21,CUST-2022-0128,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Australia,8,28.0,224.0,2022,2022-Q4,10,October
+ORD-2022-10300,2022-10-21,CUST-2022-0131,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,6,45.0,270.0,2022,2022-Q4,10,October
+ORD-2022-10468,2022-10-21,CUST-2022-0033,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,5,45.0,225.0,2022,2022-Q4,10,October
+ORD-2022-10072,2022-10-22,CUST-2022-0159,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,3,49.0,147.0,2022,2022-Q4,10,October
+ORD-2022-10164,2022-10-22,CUST-2022-0087,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Netherlands,5,27.5,137.5,2022,2022-Q4,10,October
+ORD-2022-10213,2022-10-22,CUST-2022-0131,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,3,42.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10304,2022-10-22,CUST-2022-0180,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,4,14.0,56.0,2022,2022-Q4,10,October
+ORD-2022-10336,2022-10-22,CUST-2022-0150,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,France,2,27.5,55.0,2022,2022-Q4,10,October
+ORD-2022-10426,2022-10-22,CUST-2022-0057,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Netherlands,1,42.0,42.0,2022,2022-Q4,10,October
+ORD-2022-10432,2022-10-22,CUST-2022-0146,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Australia,4,29.5,118.0,2022,2022-Q4,10,October
+ORD-2022-10446,2022-10-22,CUST-2022-0180,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,10,October
+ORD-2022-10531,2022-10-22,CUST-2022-0053,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,1,14.0,14.0,2022,2022-Q4,10,October
+ORD-2022-10581,2022-10-22,CUST-2022-0112,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,2,19.95,39.9,2022,2022-Q4,10,October
+ORD-2022-10586,2022-10-22,CUST-2022-0117,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,2,89.99,179.98,2022,2022-Q4,10,October
+ORD-2022-10100,2022-10-23,CUST-2022-0152,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,8,27.5,220.0,2022,2022-Q4,10,October
+ORD-2022-10181,2022-10-23,CUST-2022-0135,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Netherlands,3,22.5,67.5,2022,2022-Q4,10,October
+ORD-2022-10207,2022-10-23,CUST-2022-0172,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Germany,4,19.95,79.8,2022,2022-Q4,10,October
+ORD-2022-10270,2022-10-23,CUST-2022-0017,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,6,16.5,99.0,2022,2022-Q4,10,October
+ORD-2022-10321,2022-10-23,CUST-2022-0075,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10326,2022-10-23,CUST-2022-0172,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,6,28.0,168.0,2022,2022-Q4,10,October
+ORD-2022-10475,2022-10-23,CUST-2022-0108,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Netherlands,3,42.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10559,2022-10-23,CUST-2022-0067,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,6,45.0,270.0,2022,2022-Q4,10,October
+ORD-2022-10580,2022-10-23,CUST-2022-0054,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,1,22.5,22.5,2022,2022-Q4,10,October
+ORD-2022-10103,2022-10-24,CUST-2022-0088,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Netherlands,6,14.0,84.0,2022,2022-Q4,10,October
+ORD-2022-10110,2022-10-24,CUST-2022-0151,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,United Kingdom,8,29.5,236.0,2022,2022-Q4,10,October
+ORD-2022-10197,2022-10-24,CUST-2022-0047,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,6,18.0,108.0,2022,2022-Q4,10,October
+ORD-2022-10229,2022-10-24,CUST-2022-0036,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,8,24.99,199.92,2022,2022-Q4,10,October
+ORD-2022-10421,2022-10-24,CUST-2022-0036,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Germany,7,32.0,224.0,2022,2022-Q4,10,October
+ORD-2022-10537,2022-10-24,CUST-2022-0068,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,5,16.5,82.5,2022,2022-Q4,10,October
+ORD-2022-10604,2022-10-24,CUST-2022-0070,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Japan,2,65.0,130.0,2022,2022-Q4,10,October
+ORD-2022-10646,2022-10-24,CUST-2022-0138,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Germany,1,42.0,42.0,2022,2022-Q4,10,October
+ORD-2022-10214,2022-10-25,CUST-2022-0038,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,3,18.0,54.0,2022,2022-Q4,10,October
+ORD-2022-10256,2022-10-25,CUST-2022-0085,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Australia,1,18.0,18.0,2022,2022-Q4,10,October
+ORD-2022-10458,2022-10-25,CUST-2022-0062,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,1,45.0,45.0,2022,2022-Q4,10,October
+ORD-2022-10512,2022-10-25,CUST-2022-0024,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,3,45.0,135.0,2022,2022-Q4,10,October
+ORD-2022-10532,2022-10-25,CUST-2022-0025,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,5,45.0,225.0,2022,2022-Q4,10,October
+ORD-2022-10543,2022-10-25,CUST-2022-0175,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United Kingdom,7,38.0,266.0,2022,2022-Q4,10,October
+ORD-2022-10568,2022-10-25,CUST-2022-0154,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United States,4,55.0,220.0,2022,2022-Q4,10,October
+ORD-2022-10584,2022-10-25,CUST-2022-0058,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Netherlands,3,89.99,269.97,2022,2022-Q4,10,October
+ORD-2022-10588,2022-10-25,CUST-2022-0034,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,1,19.95,19.95,2022,2022-Q4,10,October
+ORD-2022-10163,2022-10-26,CUST-2022-0070,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,6,55.0,330.0,2022,2022-Q4,10,October
+ORD-2022-10279,2022-10-26,CUST-2022-0024,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,5,32.0,160.0,2022,2022-Q4,10,October
+ORD-2022-10444,2022-10-26,CUST-2022-0071,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Australia,3,24.99,74.97,2022,2022-Q4,10,October
+ORD-2022-10480,2022-10-26,CUST-2022-0152,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,4,18.0,72.0,2022,2022-Q4,10,October
+ORD-2022-10357,2022-10-27,CUST-2022-0024,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Australia,8,22.5,180.0,2022,2022-Q4,10,October
+ORD-2022-10364,2022-10-27,CUST-2022-0057,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,7,18.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10411,2022-10-27,CUST-2022-0179,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,8,45.0,360.0,2022,2022-Q4,10,October
+ORD-2022-10593,2022-10-27,CUST-2022-0170,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,2,49.0,98.0,2022,2022-Q4,10,October
+ORD-2022-10636,2022-10-27,CUST-2022-0173,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,2,49.0,98.0,2022,2022-Q4,10,October
+ORD-2022-10003,2022-10-28,CUST-2022-0167,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,France,1,55.0,55.0,2022,2022-Q4,10,October
+ORD-2022-10037,2022-10-28,CUST-2022-0100,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,3,16.5,49.5,2022,2022-Q4,10,October
+ORD-2022-10094,2022-10-28,CUST-2022-0156,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,6,45.0,270.0,2022,2022-Q4,10,October
+ORD-2022-10244,2022-10-28,CUST-2022-0074,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,7,55.0,385.0,2022,2022-Q4,10,October
+ORD-2022-10292,2022-10-28,CUST-2022-0153,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,1,22.5,22.5,2022,2022-Q4,10,October
+ORD-2022-10440,2022-10-28,CUST-2022-0073,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,8,14.0,112.0,2022,2022-Q4,10,October
+ORD-2022-10454,2022-10-28,CUST-2022-0151,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Netherlands,1,89.99,89.99,2022,2022-Q4,10,October
+ORD-2022-10502,2022-10-28,CUST-2022-0039,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,5,24.99,124.95,2022,2022-Q4,10,October
+ORD-2022-10589,2022-10-28,CUST-2022-0094,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,3,42.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10623,2022-10-28,CUST-2022-0107,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,6,14.0,84.0,2022,2022-Q4,10,October
+ORD-2022-10060,2022-10-29,CUST-2022-0059,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,6,19.95,119.7,2022,2022-Q4,10,October
+ORD-2022-10061,2022-10-29,CUST-2022-0018,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,34.5,69.0,2022,2022-Q4,10,October
+ORD-2022-10118,2022-10-29,CUST-2022-0151,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,8,28.0,224.0,2022,2022-Q4,10,October
+ORD-2022-10310,2022-10-29,CUST-2022-0126,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,France,4,18.0,72.0,2022,2022-Q4,10,October
+ORD-2022-10408,2022-10-29,CUST-2022-0174,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Germany,6,19.95,119.7,2022,2022-Q4,10,October
+ORD-2022-10476,2022-10-29,CUST-2022-0082,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United States,7,32.0,224.0,2022,2022-Q4,10,October
+ORD-2022-10519,2022-10-29,CUST-2022-0076,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Netherlands,5,19.95,99.75,2022,2022-Q4,10,October
+ORD-2022-10522,2022-10-29,CUST-2022-0020,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,1,65.0,65.0,2022,2022-Q4,10,October
+ORD-2022-10538,2022-10-29,CUST-2022-0171,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Netherlands,3,22.5,67.5,2022,2022-Q4,10,October
+ORD-2022-10561,2022-10-29,CUST-2022-0132,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,5,29.5,147.5,2022,2022-Q4,10,October
+ORD-2022-10640,2022-10-29,CUST-2022-0046,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,4,32.0,128.0,2022,2022-Q4,10,October
+ORD-2022-10386,2022-10-30,CUST-2022-0150,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,7,27.5,192.5,2022,2022-Q4,10,October
+ORD-2022-10447,2022-10-30,CUST-2022-0123,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,2,16.5,33.0,2022,2022-Q4,10,October
+ORD-2022-10482,2022-10-30,CUST-2022-0169,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,6,22.5,135.0,2022,2022-Q4,10,October
+ORD-2022-10485,2022-10-30,CUST-2022-0022,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Japan,8,45.0,360.0,2022,2022-Q4,10,October
+ORD-2022-10489,2022-10-30,CUST-2022-0150,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Netherlands,1,34.5,34.5,2022,2022-Q4,10,October
+ORD-2022-10540,2022-10-30,CUST-2022-0138,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,3,65.0,195.0,2022,2022-Q4,10,October
+ORD-2022-10245,2022-10-31,CUST-2022-0164,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,1,22.5,22.5,2022,2022-Q4,10,October
+ORD-2022-10248,2022-10-31,CUST-2022-0093,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,2,14.0,28.0,2022,2022-Q4,10,October
+ORD-2022-10251,2022-10-31,CUST-2022-0035,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Netherlands,3,42.0,126.0,2022,2022-Q4,10,October
+ORD-2022-10330,2022-10-31,CUST-2022-0104,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,2,89.99,179.98,2022,2022-Q4,10,October
+ORD-2022-10348,2022-10-31,CUST-2022-0115,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,France,2,38.0,76.0,2022,2022-Q4,10,October
+ORD-2022-10466,2022-10-31,CUST-2022-0030,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United States,1,34.5,34.5,2022,2022-Q4,10,October
+ORD-2022-10523,2022-10-31,CUST-2022-0023,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,France,3,18.0,54.0,2022,2022-Q4,10,October
+ORD-2022-10613,2022-10-31,CUST-2022-0141,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,1,18.0,18.0,2022,2022-Q4,10,October
+ORD-2022-10031,2022-11-01,CUST-2022-0169,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,4,28.0,112.0,2022,2022-Q4,11,November
+ORD-2022-10102,2022-11-01,CUST-2022-0084,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,6,28.0,168.0,2022,2022-Q4,11,November
+ORD-2022-10117,2022-11-01,CUST-2022-0159,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,France,2,42.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10316,2022-11-01,CUST-2022-0014,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,France,1,42.0,42.0,2022,2022-Q4,11,November
+ORD-2022-10396,2022-11-01,CUST-2022-0078,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,8,14.0,112.0,2022,2022-Q4,11,November
+ORD-2022-10436,2022-11-01,CUST-2022-0069,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,France,3,28.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10474,2022-11-01,CUST-2022-0039,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,2,65.0,130.0,2022,2022-Q4,11,November
+ORD-2022-10628,2022-11-01,CUST-2022-0116,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Japan,6,27.5,165.0,2022,2022-Q4,11,November
+ORD-2022-10065,2022-11-02,CUST-2022-0138,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,1,65.0,65.0,2022,2022-Q4,11,November
+ORD-2022-10215,2022-11-02,CUST-2022-0168,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Netherlands,3,29.5,88.5,2022,2022-Q4,11,November
+ORD-2022-10314,2022-11-02,CUST-2022-0070,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Australia,4,14.0,56.0,2022,2022-Q4,11,November
+ORD-2022-10404,2022-11-02,CUST-2022-0154,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,7,19.95,139.65,2022,2022-Q4,11,November
+ORD-2022-10622,2022-11-02,CUST-2022-0101,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,United States,2,29.5,59.0,2022,2022-Q4,11,November
+ORD-2022-10643,2022-11-02,CUST-2022-0040,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Netherlands,2,49.0,98.0,2022,2022-Q4,11,November
+ORD-2022-10007,2022-11-03,CUST-2022-0097,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,11,November
+ORD-2022-10016,2022-11-03,CUST-2022-0036,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,6,28.0,168.0,2022,2022-Q4,11,November
+ORD-2022-10038,2022-11-03,CUST-2022-0143,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,7,45.0,315.0,2022,2022-Q4,11,November
+ORD-2022-10044,2022-11-03,CUST-2022-0034,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,4,24.99,99.96,2022,2022-Q4,11,November
+ORD-2022-10049,2022-11-03,CUST-2022-0070,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,France,3,89.99,269.97,2022,2022-Q4,11,November
+ORD-2022-10063,2022-11-03,CUST-2022-0153,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,5,55.0,275.0,2022,2022-Q4,11,November
+ORD-2022-10120,2022-11-03,CUST-2022-0020,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,1,34.5,34.5,2022,2022-Q4,11,November
+ORD-2022-10294,2022-11-03,CUST-2022-0014,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,6,27.5,165.0,2022,2022-Q4,11,November
+ORD-2022-10488,2022-11-03,CUST-2022-0070,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,6,27.5,165.0,2022,2022-Q4,11,November
+ORD-2022-10548,2022-11-03,CUST-2022-0071,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,8,28.0,224.0,2022,2022-Q4,11,November
+ORD-2022-10596,2022-11-03,CUST-2022-0011,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,7,24.99,174.93,2022,2022-Q4,11,November
+ORD-2022-10600,2022-11-03,CUST-2022-0011,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,2,16.5,33.0,2022,2022-Q4,11,November
+ORD-2022-10059,2022-11-04,CUST-2022-0121,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Australia,7,38.0,266.0,2022,2022-Q4,11,November
+ORD-2022-10081,2022-11-04,CUST-2022-0060,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,2,18.0,36.0,2022,2022-Q4,11,November
+ORD-2022-10101,2022-11-04,CUST-2022-0116,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,2,32.0,64.0,2022,2022-Q4,11,November
+ORD-2022-10126,2022-11-04,CUST-2022-0111,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,France,2,28.0,56.0,2022,2022-Q4,11,November
+ORD-2022-10257,2022-11-04,CUST-2022-0113,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United States,2,49.0,98.0,2022,2022-Q4,11,November
+ORD-2022-10324,2022-11-04,CUST-2022-0118,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United Kingdom,6,38.0,228.0,2022,2022-Q4,11,November
+ORD-2022-10380,2022-11-04,CUST-2022-0140,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,3,89.99,269.97,2022,2022-Q4,11,November
+ORD-2022-10388,2022-11-04,CUST-2022-0082,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Netherlands,3,19.95,59.85,2022,2022-Q4,11,November
+ORD-2022-10394,2022-11-04,CUST-2022-0043,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,8,18.0,144.0,2022,2022-Q4,11,November
+ORD-2022-10469,2022-11-04,CUST-2022-0070,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Australia,2,89.99,179.98,2022,2022-Q4,11,November
+ORD-2022-10477,2022-11-04,CUST-2022-0173,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,2,42.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10509,2022-11-04,CUST-2022-0100,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Australia,3,34.5,103.5,2022,2022-Q4,11,November
+ORD-2022-10010,2022-11-05,CUST-2022-0054,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,3,45.0,135.0,2022,2022-Q4,11,November
+ORD-2022-10062,2022-11-05,CUST-2022-0030,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United States,6,27.5,165.0,2022,2022-Q4,11,November
+ORD-2022-10090,2022-11-05,CUST-2022-0139,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,2,45.0,90.0,2022,2022-Q4,11,November
+ORD-2022-10104,2022-11-05,CUST-2022-0105,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,4,22.5,90.0,2022,2022-Q4,11,November
+ORD-2022-10158,2022-11-05,CUST-2022-0013,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Netherlands,3,42.0,126.0,2022,2022-Q4,11,November
+ORD-2022-10173,2022-11-05,CUST-2022-0061,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,49.0,49.0,2022,2022-Q4,11,November
+ORD-2022-10218,2022-11-05,CUST-2022-0119,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,3,49.0,147.0,2022,2022-Q4,11,November
+ORD-2022-10456,2022-11-05,CUST-2022-0156,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,France,3,34.5,103.5,2022,2022-Q4,11,November
+ORD-2022-10464,2022-11-05,CUST-2022-0053,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,49.0,49.0,2022,2022-Q4,11,November
+ORD-2022-10564,2022-11-05,CUST-2022-0056,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Germany,6,28.0,168.0,2022,2022-Q4,11,November
+ORD-2022-10050,2022-11-06,CUST-2022-0068,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,France,4,24.99,99.96,2022,2022-Q4,11,November
+ORD-2022-10225,2022-11-06,CUST-2022-0170,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,6,32.0,192.0,2022,2022-Q4,11,November
+ORD-2022-10238,2022-11-06,CUST-2022-0132,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Germany,2,34.5,69.0,2022,2022-Q4,11,November
+ORD-2022-10319,2022-11-06,CUST-2022-0023,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United States,1,18.0,18.0,2022,2022-Q4,11,November
+ORD-2022-10323,2022-11-06,CUST-2022-0120,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Australia,3,28.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10362,2022-11-06,CUST-2022-0093,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,6,28.0,168.0,2022,2022-Q4,11,November
+ORD-2022-10457,2022-11-06,CUST-2022-0131,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,49.0,49.0,2022,2022-Q4,11,November
+ORD-2022-10595,2022-11-06,CUST-2022-0052,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,2,89.99,179.98,2022,2022-Q4,11,November
+ORD-2022-10635,2022-11-06,CUST-2022-0076,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,1,32.0,32.0,2022,2022-Q4,11,November
+ORD-2022-10106,2022-11-07,CUST-2022-0149,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,4,19.95,79.8,2022,2022-Q4,11,November
+ORD-2022-10122,2022-11-07,CUST-2022-0180,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Netherlands,2,34.5,69.0,2022,2022-Q4,11,November
+ORD-2022-10206,2022-11-07,CUST-2022-0111,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,1,22.5,22.5,2022,2022-Q4,11,November
+ORD-2022-10254,2022-11-07,CUST-2022-0081,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United States,4,38.0,152.0,2022,2022-Q4,11,November
+ORD-2022-10427,2022-11-07,CUST-2022-0044,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,49.0,49.0,2022,2022-Q4,11,November
+ORD-2022-10434,2022-11-07,CUST-2022-0106,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Japan,3,22.5,67.5,2022,2022-Q4,11,November
+ORD-2022-10528,2022-11-07,CUST-2022-0019,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Japan,2,49.0,98.0,2022,2022-Q4,11,November
+ORD-2022-10601,2022-11-07,CUST-2022-0025,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Netherlands,7,18.0,126.0,2022,2022-Q4,11,November
+ORD-2022-10070,2022-11-08,CUST-2022-0156,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Netherlands,7,32.0,224.0,2022,2022-Q4,11,November
+ORD-2022-10112,2022-11-08,CUST-2022-0014,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,1,42.0,42.0,2022,2022-Q4,11,November
+ORD-2022-10284,2022-11-08,CUST-2022-0107,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,1,16.5,16.5,2022,2022-Q4,11,November
+ORD-2022-10360,2022-11-08,CUST-2022-0031,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Japan,1,34.5,34.5,2022,2022-Q4,11,November
+ORD-2022-10377,2022-11-08,CUST-2022-0097,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,1,89.99,89.99,2022,2022-Q4,11,November
+ORD-2022-10493,2022-11-08,CUST-2022-0064,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,34.5,69.0,2022,2022-Q4,11,November
+ORD-2022-10227,2022-11-09,CUST-2022-0176,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,3,45.0,135.0,2022,2022-Q4,11,November
+ORD-2022-10255,2022-11-09,CUST-2022-0166,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,5,28.0,140.0,2022,2022-Q4,11,November
+ORD-2022-10261,2022-11-09,CUST-2022-0090,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,France,3,28.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10492,2022-11-09,CUST-2022-0176,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,2,45.0,90.0,2022,2022-Q4,11,November
+ORD-2022-10551,2022-11-09,CUST-2022-0059,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Japan,2,27.5,55.0,2022,2022-Q4,11,November
+ORD-2022-10040,2022-11-10,CUST-2022-0136,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,3,89.99,269.97,2022,2022-Q4,11,November
+ORD-2022-10267,2022-11-10,CUST-2022-0048,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,2,32.0,64.0,2022,2022-Q4,11,November
+ORD-2022-10287,2022-11-10,CUST-2022-0064,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,2,19.95,39.9,2022,2022-Q4,11,November
+ORD-2022-10308,2022-11-10,CUST-2022-0174,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Germany,6,19.95,119.7,2022,2022-Q4,11,November
+ORD-2022-10311,2022-11-10,CUST-2022-0147,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,5,45.0,225.0,2022,2022-Q4,11,November
+ORD-2022-10507,2022-11-10,CUST-2022-0121,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United Kingdom,5,38.0,190.0,2022,2022-Q4,11,November
+ORD-2022-10630,2022-11-10,CUST-2022-0075,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,4,29.5,118.0,2022,2022-Q4,11,November
+ORD-2022-10068,2022-11-11,CUST-2022-0171,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,3,45.0,135.0,2022,2022-Q4,11,November
+ORD-2022-10089,2022-11-11,CUST-2022-0098,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,6,19.95,119.7,2022,2022-Q4,11,November
+ORD-2022-10127,2022-11-11,CUST-2022-0173,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,2,22.5,45.0,2022,2022-Q4,11,November
+ORD-2022-10278,2022-11-11,CUST-2022-0065,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Australia,5,24.99,124.95,2022,2022-Q4,11,November
+ORD-2022-10515,2022-11-11,CUST-2022-0037,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,France,1,89.99,89.99,2022,2022-Q4,11,November
+ORD-2022-10073,2022-11-12,CUST-2022-0051,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,3,34.5,103.5,2022,2022-Q4,11,November
+ORD-2022-10108,2022-11-12,CUST-2022-0060,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,5,27.5,137.5,2022,2022-Q4,11,November
+ORD-2022-10145,2022-11-12,CUST-2022-0117,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,1,65.0,65.0,2022,2022-Q4,11,November
+ORD-2022-10178,2022-11-12,CUST-2022-0038,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,1,55.0,55.0,2022,2022-Q4,11,November
+ORD-2022-10329,2022-11-12,CUST-2022-0178,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,France,5,22.5,112.5,2022,2022-Q4,11,November
+ORD-2022-10648,2022-11-12,CUST-2022-0159,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Japan,4,18.0,72.0,2022,2022-Q4,11,November
+ORD-2022-10140,2022-11-13,CUST-2022-0151,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Netherlands,5,22.5,112.5,2022,2022-Q4,11,November
+ORD-2022-10147,2022-11-13,CUST-2022-0137,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,6,16.5,99.0,2022,2022-Q4,11,November
+ORD-2022-10297,2022-11-13,CUST-2022-0103,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,4,32.0,128.0,2022,2022-Q4,11,November
+ORD-2022-10413,2022-11-13,CUST-2022-0045,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,3,34.5,103.5,2022,2022-Q4,11,November
+ORD-2022-10441,2022-11-13,CUST-2022-0175,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Netherlands,8,55.0,440.0,2022,2022-Q4,11,November
+ORD-2022-10529,2022-11-13,CUST-2022-0141,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Netherlands,3,19.95,59.85,2022,2022-Q4,11,November
+ORD-2022-10571,2022-11-13,CUST-2022-0172,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United States,8,55.0,440.0,2022,2022-Q4,11,November
+ORD-2022-10203,2022-11-14,CUST-2022-0152,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,5,16.5,82.5,2022,2022-Q4,11,November
+ORD-2022-10286,2022-11-14,CUST-2022-0028,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,6,14.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10419,2022-11-14,CUST-2022-0077,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Australia,3,27.5,82.5,2022,2022-Q4,11,November
+ORD-2022-10433,2022-11-14,CUST-2022-0075,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Japan,6,32.0,192.0,2022,2022-Q4,11,November
+ORD-2022-10453,2022-11-14,CUST-2022-0114,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,7,29.5,206.5,2022,2022-Q4,11,November
+ORD-2022-10525,2022-11-14,CUST-2022-0113,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,1,22.5,22.5,2022,2022-Q4,11,November
+ORD-2022-10611,2022-11-14,CUST-2022-0041,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,1,14.0,14.0,2022,2022-Q4,11,November
+ORD-2022-10056,2022-11-15,CUST-2022-0144,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Germany,2,29.5,59.0,2022,2022-Q4,11,November
+ORD-2022-10151,2022-11-15,CUST-2022-0106,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,3,27.5,82.5,2022,2022-Q4,11,November
+ORD-2022-10175,2022-11-15,CUST-2022-0032,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,2,65.0,130.0,2022,2022-Q4,11,November
+ORD-2022-10208,2022-11-15,CUST-2022-0005,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,11,November
+ORD-2022-10494,2022-11-15,CUST-2022-0045,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,5,16.5,82.5,2022,2022-Q4,11,November
+ORD-2022-10510,2022-11-15,CUST-2022-0179,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,4,29.5,118.0,2022,2022-Q4,11,November
+ORD-2022-10511,2022-11-15,CUST-2022-0145,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,3,49.0,147.0,2022,2022-Q4,11,November
+ORD-2022-10572,2022-11-15,CUST-2022-0121,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,3,32.0,96.0,2022,2022-Q4,11,November
+ORD-2022-10574,2022-11-15,CUST-2022-0085,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Netherlands,7,24.99,174.93,2022,2022-Q4,11,November
+ORD-2022-10603,2022-11-15,CUST-2022-0088,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,2,45.0,90.0,2022,2022-Q4,11,November
+ORD-2022-10174,2022-11-16,CUST-2022-0166,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United States,3,49.0,147.0,2022,2022-Q4,11,November
+ORD-2022-10223,2022-11-16,CUST-2022-0087,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,7,18.0,126.0,2022,2022-Q4,11,November
+ORD-2022-10265,2022-11-16,CUST-2022-0095,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,3,16.5,49.5,2022,2022-Q4,11,November
+ORD-2022-10272,2022-11-16,CUST-2022-0061,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Netherlands,4,38.0,152.0,2022,2022-Q4,11,November
+ORD-2022-10389,2022-11-16,CUST-2022-0114,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,1,89.99,89.99,2022,2022-Q4,11,November
+ORD-2022-10390,2022-11-16,CUST-2022-0111,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,3,22.5,67.5,2022,2022-Q4,11,November
+ORD-2022-10461,2022-11-16,CUST-2022-0018,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,2,19.95,39.9,2022,2022-Q4,11,November
+ORD-2022-10107,2022-11-17,CUST-2022-0141,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Japan,7,45.0,315.0,2022,2022-Q4,11,November
+ORD-2022-10190,2022-11-17,CUST-2022-0022,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,2,19.95,39.9,2022,2022-Q4,11,November
+ORD-2022-10195,2022-11-17,CUST-2022-0110,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,3,49.0,147.0,2022,2022-Q4,11,November
+ORD-2022-10200,2022-11-17,CUST-2022-0040,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United States,2,18.0,36.0,2022,2022-Q4,11,November
+ORD-2022-10250,2022-11-17,CUST-2022-0089,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Netherlands,6,22.5,135.0,2022,2022-Q4,11,November
+ORD-2022-10266,2022-11-17,CUST-2022-0102,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,3,16.5,49.5,2022,2022-Q4,11,November
+ORD-2022-10333,2022-11-17,CUST-2022-0175,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Netherlands,4,28.0,112.0,2022,2022-Q4,11,November
+ORD-2022-10472,2022-11-17,CUST-2022-0173,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United States,2,24.99,49.98,2022,2022-Q4,11,November
+ORD-2022-10575,2022-11-17,CUST-2022-0121,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Australia,8,18.0,144.0,2022,2022-Q4,11,November
+ORD-2022-10069,2022-11-18,CUST-2022-0001,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,5,55.0,275.0,2022,2022-Q4,11,November
+ORD-2022-10148,2022-11-18,CUST-2022-0061,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,France,1,27.5,27.5,2022,2022-Q4,11,November
+ORD-2022-10343,2022-11-18,CUST-2022-0090,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,France,1,42.0,42.0,2022,2022-Q4,11,November
+ORD-2022-10483,2022-11-18,CUST-2022-0061,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,4,22.5,90.0,2022,2022-Q4,11,November
+ORD-2022-10577,2022-11-18,CUST-2022-0039,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Australia,1,27.5,27.5,2022,2022-Q4,11,November
+ORD-2022-10082,2022-11-19,CUST-2022-0085,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Germany,2,29.5,59.0,2022,2022-Q4,11,November
+ORD-2022-10085,2022-11-19,CUST-2022-0112,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,8,14.0,112.0,2022,2022-Q4,11,November
+ORD-2022-10144,2022-11-19,CUST-2022-0152,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,1,19.95,19.95,2022,2022-Q4,11,November
+ORD-2022-10156,2022-11-19,CUST-2022-0092,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,4,16.5,66.0,2022,2022-Q4,11,November
+ORD-2022-10241,2022-11-19,CUST-2022-0026,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,1,49.0,49.0,2022,2022-Q4,11,November
+ORD-2022-10258,2022-11-19,CUST-2022-0095,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,8,32.0,256.0,2022,2022-Q4,11,November
+ORD-2022-10392,2022-11-19,CUST-2022-0022,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,2,49.0,98.0,2022,2022-Q4,11,November
+ORD-2022-10455,2022-11-19,CUST-2022-0064,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Netherlands,6,27.5,165.0,2022,2022-Q4,11,November
+ORD-2022-10545,2022-11-19,CUST-2022-0004,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,5,45.0,225.0,2022,2022-Q4,11,November
+ORD-2022-10605,2022-11-19,CUST-2022-0179,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,3,28.0,84.0,2022,2022-Q4,11,November
+ORD-2022-10627,2022-11-19,CUST-2022-0178,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Japan,7,27.5,192.5,2022,2022-Q4,11,November
+ORD-2022-10376,2022-11-20,CUST-2022-0063,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,2,46.55,93.1,2022,2022-Q4,11,November
+ORD-2022-10501,2022-11-20,CUST-2022-0045,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,7,14.85,103.95,2022,2022-Q4,11,November
+ORD-2022-10517,2022-11-20,CUST-2022-0041,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,2,41.65,83.3,2022,2022-Q4,11,November
+ORD-2022-10549,2022-11-21,CUST-2022-0085,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,7,52.25,365.75,2022,2022-Q4,11,November
+ORD-2022-10569,2022-11-21,CUST-2022-0076,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,1,28.8,28.8,2022,2022-Q4,11,November
+ORD-2022-10647,2022-11-21,CUST-2022-0170,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United States,1,44.1,44.1,2022,2022-Q4,11,November
+ORD-2022-10057,2022-11-22,CUST-2022-0046,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Japan,3,25.07,75.21,2022,2022-Q4,11,November
+ORD-2022-10137,2022-11-22,CUST-2022-0031,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Germany,1,32.77,32.77,2022,2022-Q4,11,November
+ORD-2022-10233,2022-11-22,CUST-2022-0115,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,8,30.4,243.2,2022,2022-Q4,11,November
+ORD-2022-10275,2022-11-22,CUST-2022-0116,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,France,2,29.32,58.64,2022,2022-Q4,11,November
+ORD-2022-10306,2022-11-22,CUST-2022-0016,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Australia,8,18.95,151.6,2022,2022-Q4,11,November
+ORD-2022-10352,2022-11-22,CUST-2022-0152,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,France,1,17.1,17.1,2022,2022-Q4,11,November
+ORD-2022-10491,2022-11-22,CUST-2022-0054,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Japan,2,35.7,71.4,2022,2022-Q4,11,November
+ORD-2022-10289,2022-11-23,CUST-2022-0081,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,United States,6,28.02,168.12,2022,2022-Q4,11,November
+ORD-2022-10366,2022-11-23,CUST-2022-0098,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,4,30.4,121.6,2022,2022-Q4,11,November
+ORD-2022-10484,2022-11-23,CUST-2022-0024,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Netherlands,3,16.5,49.5,2022,2022-Q4,11,November
+ORD-2022-10526,2022-11-23,CUST-2022-0090,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United States,8,16.96,135.68,2022,2022-Q4,11,November
+ORD-2022-10570,2022-11-23,CUST-2022-0147,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,France,1,26.6,26.6,2022,2022-Q4,11,November
+ORD-2022-10592,2022-11-23,CUST-2022-0122,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Germany,2,26.6,53.2,2022,2022-Q4,11,November
+ORD-2022-10026,2022-11-24,CUST-2022-0167,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Japan,7,22.49,157.43,2022,2022-Q4,11,November
+ORD-2022-10077,2022-11-24,CUST-2022-0064,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,8,55.0,440.0,2022,2022-Q4,11,November
+ORD-2022-10119,2022-11-24,CUST-2022-0054,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,3,39.9,119.7,2022,2022-Q4,11,November
+ORD-2022-10185,2022-11-24,CUST-2022-0083,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United States,2,26.6,53.2,2022,2022-Q4,11,November
+ORD-2022-10193,2022-11-24,CUST-2022-0130,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,6,17.1,102.6,2022,2022-Q4,11,November
+ORD-2022-10346,2022-11-24,CUST-2022-0071,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,United Kingdom,8,28.02,224.16,2022,2022-Q4,11,November
+ORD-2022-10534,2022-11-24,CUST-2022-0053,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,4,26.12,104.48,2022,2022-Q4,11,November
+ORD-2022-10032,2022-11-25,CUST-2022-0014,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Australia,8,28.0,224.0,2022,2022-Q4,11,November
+ORD-2022-10064,2022-11-25,CUST-2022-0148,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,2,26.12,52.24,2022,2022-Q4,11,November
+ORD-2022-10379,2022-11-25,CUST-2022-0178,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,1,35.7,35.7,2022,2022-Q4,11,November
+ORD-2022-10395,2022-11-25,CUST-2022-0093,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,8,40.5,324.0,2022,2022-Q4,11,November
+ORD-2022-10544,2022-11-25,CUST-2022-0018,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,5,55.0,275.0,2022,2022-Q4,11,November
+ORD-2022-10027,2022-11-26,CUST-2022-0006,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,1,32.77,32.77,2022,2022-Q4,11,November
+ORD-2022-10150,2022-11-26,CUST-2022-0015,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,1,20.25,20.25,2022,2022-Q4,11,November
+ORD-2022-10155,2022-11-26,CUST-2022-0078,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,5,26.12,130.6,2022,2022-Q4,11,November
+ORD-2022-10398,2022-11-26,CUST-2022-0178,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,5,13.3,66.5,2022,2022-Q4,11,November
+ORD-2022-10431,2022-11-26,CUST-2022-0157,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Australia,6,25.07,150.42,2022,2022-Q4,11,November
+ORD-2022-10217,2022-11-27,CUST-2022-0114,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,8,28.8,230.4,2022,2022-Q4,11,November
+ORD-2022-10219,2022-11-27,CUST-2022-0024,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,2,41.65,83.3,2022,2022-Q4,11,November
+ORD-2022-10262,2022-11-27,CUST-2022-0015,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,France,5,27.5,137.5,2022,2022-Q4,11,November
+ORD-2022-10391,2022-11-27,CUST-2022-0024,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,1,80.99,80.99,2022,2022-Q4,11,November
+ORD-2022-10412,2022-11-27,CUST-2022-0030,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Australia,1,49.0,49.0,2022,2022-Q4,11,November
+ORD-2022-10416,2022-11-27,CUST-2022-0017,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,4,16.5,66.0,2022,2022-Q4,11,November
+ORD-2022-10046,2022-11-28,CUST-2022-0034,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Germany,1,37.8,37.8,2022,2022-Q4,11,November
+ORD-2022-10078,2022-11-28,CUST-2022-0130,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,8,38.25,306.0,2022,2022-Q4,11,November
+ORD-2022-10123,2022-11-28,CUST-2022-0140,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,4,23.74,94.96,2022,2022-Q4,11,November
+ORD-2022-10139,2022-11-28,CUST-2022-0071,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Australia,3,11.9,35.7,2022,2022-Q4,11,November
+ORD-2022-10172,2022-11-28,CUST-2022-0126,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,France,7,11.9,83.3,2022,2022-Q4,11,November
+ORD-2022-10176,2022-11-28,CUST-2022-0086,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,1,52.25,52.25,2022,2022-Q4,11,November
+ORD-2022-10189,2022-11-28,CUST-2022-0171,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,6,14.85,89.1,2022,2022-Q4,11,November
+ORD-2022-10209,2022-11-28,CUST-2022-0107,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Netherlands,7,24.75,173.25,2022,2022-Q4,11,November
+ORD-2022-10211,2022-11-28,CUST-2022-0151,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,1,55.25,55.25,2022,2022-Q4,11,November
+ORD-2022-10368,2022-11-28,CUST-2022-0126,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Netherlands,3,30.4,91.2,2022,2022-Q4,11,November
+ORD-2022-10428,2022-11-28,CUST-2022-0140,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,United Kingdom,1,37.8,37.8,2022,2022-Q4,11,November
+ORD-2022-10467,2022-11-28,CUST-2022-0036,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,2,32.0,64.0,2022,2022-Q4,11,November
+ORD-2022-10012,2022-11-29,CUST-2022-0015,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Australia,6,30.4,182.4,2022,2022-Q4,11,November
+ORD-2022-10087,2022-11-29,CUST-2022-0007,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,3,65.0,195.0,2022,2022-Q4,11,November
+ORD-2022-10220,2022-11-29,CUST-2022-0129,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,France,6,13.3,79.8,2022,2022-Q4,11,November
+ORD-2022-10253,2022-11-29,CUST-2022-0118,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Netherlands,2,29.5,59.0,2022,2022-Q4,11,November
+ORD-2022-10479,2022-11-29,CUST-2022-0003,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,France,2,16.2,32.4,2022,2022-Q4,11,November
+ORD-2022-10565,2022-11-29,CUST-2022-0170,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,1,14.85,14.85,2022,2022-Q4,11,November
+ORD-2022-10114,2022-11-30,CUST-2022-0065,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Japan,3,38.25,114.75,2022,2022-Q4,11,November
+ORD-2022-10536,2022-11-30,CUST-2022-0098,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,7,20.25,141.75,2022,2022-Q4,11,November
+ORD-2022-10285,2022-12-01,CUST-2022-0081,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,France,6,12.6,75.6,2022,2022-Q4,12,December
+ORD-2022-10361,2022-12-01,CUST-2022-0062,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Germany,4,49.5,198.0,2022,2022-Q4,12,December
+ORD-2022-10399,2022-12-01,CUST-2022-0075,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Japan,7,27.2,190.4,2022,2022-Q4,12,December
+ORD-2022-10405,2022-12-01,CUST-2022-0093,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Netherlands,1,28.0,28.0,2022,2022-Q4,12,December
+ORD-2022-10504,2022-12-01,CUST-2022-0108,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,2,85.49,170.98,2022,2022-Q4,12,December
+ORD-2022-10086,2022-12-02,CUST-2022-0104,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,2,61.75,123.5,2022,2022-Q4,12,December
+ORD-2022-10105,2022-12-02,CUST-2022-0005,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,Germany,8,19.95,159.6,2022,2022-Q4,12,December
+ORD-2022-10202,2022-12-02,CUST-2022-0132,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,5,28.0,140.0,2022,2022-Q4,12,December
+ORD-2022-10204,2022-12-02,CUST-2022-0154,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,4,22.5,90.0,2022,2022-Q4,12,December
+ORD-2022-10337,2022-12-02,CUST-2022-0117,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Australia,2,39.9,79.8,2022,2022-Q4,12,December
+ORD-2022-10076,2022-12-03,CUST-2022-0002,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,France,3,14.0,42.0,2022,2022-Q4,12,December
+ORD-2022-10138,2022-12-03,CUST-2022-0121,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Australia,7,17.1,119.7,2022,2022-Q4,12,December
+ORD-2022-10153,2022-12-03,CUST-2022-0118,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,France,8,26.55,212.4,2022,2022-Q4,12,December
+ORD-2022-10171,2022-12-03,CUST-2022-0035,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,1,76.49,76.49,2022,2022-Q4,12,December
+ORD-2022-10268,2022-12-03,CUST-2022-0115,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Netherlands,5,15.67,78.35,2022,2022-Q4,12,December
+ORD-2022-10273,2022-12-03,CUST-2022-0120,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,France,3,46.55,139.65,2022,2022-Q4,12,December
+ORD-2022-10367,2022-12-03,CUST-2022-0165,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Japan,8,15.3,122.4,2022,2022-Q4,12,December
+ORD-2022-10459,2022-12-03,CUST-2022-0153,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,4,16.5,66.0,2022,2022-Q4,12,December
+ORD-2022-10471,2022-12-03,CUST-2022-0146,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,1,42.75,42.75,2022,2022-Q4,12,December
+ORD-2022-10481,2022-12-03,CUST-2022-0105,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,4,55.0,220.0,2022,2022-Q4,12,December
+ORD-2022-10021,2022-12-04,CUST-2022-0077,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Australia,2,52.25,104.5,2022,2022-Q4,12,December
+ORD-2022-10051,2022-12-04,CUST-2022-0109,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,1,40.5,40.5,2022,2022-Q4,12,December
+ORD-2022-10222,2022-12-04,CUST-2022-0113,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Netherlands,4,36.1,144.4,2022,2022-Q4,12,December
+ORD-2022-10277,2022-12-04,CUST-2022-0043,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,3,85.49,256.47,2022,2022-Q4,12,December
+ORD-2022-10280,2022-12-04,CUST-2022-0160,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,3,49.5,148.5,2022,2022-Q4,12,December
+ORD-2022-10298,2022-12-04,CUST-2022-0086,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,1,76.49,76.49,2022,2022-Q4,12,December
+ORD-2022-10384,2022-12-04,CUST-2022-0020,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,2,20.25,40.5,2022,2022-Q4,12,December
+ORD-2022-10463,2022-12-04,CUST-2022-0022,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Netherlands,7,26.12,182.84,2022,2022-Q4,12,December
+ORD-2022-10542,2022-12-04,CUST-2022-0043,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,United Kingdom,8,36.1,288.8,2022,2022-Q4,12,December
+ORD-2022-10612,2022-12-04,CUST-2022-0126,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,3,25.2,75.6,2022,2022-Q4,12,December
+ORD-2022-10017,2022-12-05,CUST-2022-0040,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,1,15.67,15.67,2022,2022-Q4,12,December
+ORD-2022-10338,2022-12-05,CUST-2022-0173,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,France,1,25.2,25.2,2022,2022-Q4,12,December
+ORD-2022-10363,2022-12-05,CUST-2022-0121,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Australia,2,25.2,50.4,2022,2022-Q4,12,December
+ORD-2022-10438,2022-12-05,CUST-2022-0084,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Japan,8,18.0,144.0,2022,2022-Q4,12,December
+ORD-2022-10599,2022-12-05,CUST-2022-0117,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,France,2,80.99,161.98,2022,2022-Q4,12,December
+ORD-2022-10080,2022-12-06,CUST-2022-0074,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,5,13.3,66.5,2022,2022-Q4,12,December
+ORD-2022-10129,2022-12-06,CUST-2022-0112,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Japan,3,38.25,114.75,2022,2022-Q4,12,December
+ORD-2022-10134,2022-12-06,CUST-2022-0053,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Netherlands,8,24.75,198.0,2022,2022-Q4,12,December
+ORD-2022-10259,2022-12-06,CUST-2022-0155,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,7,21.38,149.66,2022,2022-Q4,12,December
+ORD-2022-10299,2022-12-06,CUST-2022-0157,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,3,12.6,37.8,2022,2022-Q4,12,December
+ORD-2022-10307,2022-12-06,CUST-2022-0123,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Japan,6,46.75,280.5,2022,2022-Q4,12,December
+ORD-2022-10554,2022-12-06,CUST-2022-0130,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,3,19.12,57.36,2022,2022-Q4,12,December
+ORD-2022-10587,2022-12-06,CUST-2022-0126,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,3,24.75,74.25,2022,2022-Q4,12,December
+ORD-2022-10594,2022-12-06,CUST-2022-0027,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Australia,7,32.0,224.0,2022,2022-Q4,12,December
+ORD-2022-10111,2022-12-07,CUST-2022-0093,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,4,21.38,85.52,2022,2022-Q4,12,December
+ORD-2022-10187,2022-12-07,CUST-2022-0180,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,7,27.5,192.5,2022,2022-Q4,12,December
+ORD-2022-10212,2022-12-07,CUST-2022-0057,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Netherlands,2,58.5,117.0,2022,2022-Q4,12,December
+ORD-2022-10228,2022-12-07,CUST-2022-0093,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,3,58.5,175.5,2022,2022-Q4,12,December
+ORD-2022-10231,2022-12-07,CUST-2022-0097,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,3,46.55,139.65,2022,2022-Q4,12,December
+ORD-2022-10354,2022-12-07,CUST-2022-0097,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,7,26.12,182.84,2022,2022-Q4,12,December
+ORD-2022-10460,2022-12-07,CUST-2022-0146,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,2,41.65,83.3,2022,2022-Q4,12,December
+ORD-2022-10470,2022-12-07,CUST-2022-0161,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Japan,3,49.0,147.0,2022,2022-Q4,12,December
+ORD-2022-10508,2022-12-07,CUST-2022-0169,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,3,30.4,91.2,2022,2022-Q4,12,December
+ORD-2022-10610,2022-12-07,CUST-2022-0064,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,2,21.24,42.48,2022,2022-Q4,12,December
+ORD-2022-10649,2022-12-07,CUST-2022-0115,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,France,2,15.67,31.34,2022,2022-Q4,12,December
+ORD-2022-10034,2022-12-08,CUST-2022-0119,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,7,13.3,93.1,2022,2022-Q4,12,December
+ORD-2022-10167,2022-12-08,CUST-2022-0173,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,2,58.5,117.0,2022,2022-Q4,12,December
+ORD-2022-10234,2022-12-08,CUST-2022-0050,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United States,8,22.49,179.92,2022,2022-Q4,12,December
+ORD-2022-10301,2022-12-08,CUST-2022-0095,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Australia,8,40.5,324.0,2022,2022-Q4,12,December
+ORD-2022-10355,2022-12-08,CUST-2022-0037,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,4,11.9,47.6,2022,2022-Q4,12,December
+ORD-2022-10358,2022-12-08,CUST-2022-0155,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Germany,5,38.0,190.0,2022,2022-Q4,12,December
+ORD-2022-10417,2022-12-08,CUST-2022-0030,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,6,22.49,134.94,2022,2022-Q4,12,December
+ORD-2022-10083,2022-12-09,CUST-2022-0108,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,1,23.8,23.8,2022,2022-Q4,12,December
+ORD-2022-10260,2022-12-09,CUST-2022-0170,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,2,16.2,32.4,2022,2022-Q4,12,December
+ORD-2022-10350,2022-12-09,CUST-2022-0075,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Germany,3,36.1,108.3,2022,2022-Q4,12,December
+ORD-2022-10369,2022-12-09,CUST-2022-0020,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Australia,1,42.0,42.0,2022,2022-Q4,12,December
+ORD-2022-10429,2022-12-09,CUST-2022-0109,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,12,December
+ORD-2022-10506,2022-12-09,CUST-2022-0047,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Germany,6,45.0,270.0,2022,2022-Q4,12,December
+ORD-2022-10019,2022-12-10,CUST-2022-0069,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,3,80.99,242.97,2022,2022-Q4,12,December
+ORD-2022-10079,2022-12-10,CUST-2022-0064,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,8,12.6,100.8,2022,2022-Q4,12,December
+ORD-2022-10113,2022-12-10,CUST-2022-0004,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,8,28.8,230.4,2022,2022-Q4,12,December
+ORD-2022-10135,2022-12-10,CUST-2022-0125,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United States,8,24.99,199.92,2022,2022-Q4,12,December
+ORD-2022-10142,2022-12-10,CUST-2022-0179,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Australia,6,26.6,159.6,2022,2022-Q4,12,December
+ORD-2022-10271,2022-12-10,CUST-2022-0180,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Netherlands,3,17.1,51.3,2022,2022-Q4,12,December
+ORD-2022-10296,2022-12-10,CUST-2022-0101,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Japan,3,20.25,60.75,2022,2022-Q4,12,December
+ORD-2022-10378,2022-12-10,CUST-2022-0022,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Netherlands,1,14.03,14.03,2022,2022-Q4,12,December
+ORD-2022-10414,2022-12-10,CUST-2022-0060,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Japan,7,21.24,148.68,2022,2022-Q4,12,December
+ORD-2022-10597,2022-12-10,CUST-2022-0001,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,8,14.0,112.0,2022,2022-Q4,12,December
+ORD-2022-10639,2022-12-10,CUST-2022-0159,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,3,76.49,229.47,2022,2022-Q4,12,December
+ORD-2022-10196,2022-12-11,CUST-2022-0069,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Australia,3,42.0,126.0,2022,2022-Q4,12,December
+ORD-2022-10315,2022-12-11,CUST-2022-0151,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,2,30.4,60.8,2022,2022-Q4,12,December
+ORD-2022-10393,2022-12-11,CUST-2022-0044,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,France,3,52.25,156.75,2022,2022-Q4,12,December
+ORD-2022-10423,2022-12-11,CUST-2022-0081,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,5,16.96,84.8,2022,2022-Q4,12,December
+ORD-2022-10425,2022-12-11,CUST-2022-0114,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Germany,8,23.8,190.4,2022,2022-Q4,12,December
+ORD-2022-10566,2022-12-11,CUST-2022-0087,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Germany,2,16.2,32.4,2022,2022-Q4,12,December
+ORD-2022-10637,2022-12-11,CUST-2022-0179,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United Kingdom,7,49.5,346.5,2022,2022-Q4,12,December
+ORD-2022-10024,2022-12-12,CUST-2022-0018,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,3,85.49,256.47,2022,2022-Q4,12,December
+ORD-2022-10152,2022-12-12,CUST-2022-0098,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,United Kingdom,3,28.02,84.06,2022,2022-Q4,12,December
+ORD-2022-10281,2022-12-12,CUST-2022-0165,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,1,80.99,80.99,2022,2022-Q4,12,December
+ORD-2022-10295,2022-12-12,CUST-2022-0130,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,5,21.24,106.2,2022,2022-Q4,12,December
+ORD-2022-10335,2022-12-12,CUST-2022-0052,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United States,3,85.49,256.47,2022,2022-Q4,12,December
+ORD-2022-10381,2022-12-12,CUST-2022-0054,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,32.77,65.54,2022,2022-Q4,12,December
+ORD-2022-10407,2022-12-12,CUST-2022-0026,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,7,40.5,283.5,2022,2022-Q4,12,December
+ORD-2022-10607,2022-12-12,CUST-2022-0157,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Netherlands,7,14.0,98.0,2022,2022-Q4,12,December
+ORD-2022-10096,2022-12-13,CUST-2022-0177,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,4,26.6,106.4,2022,2022-Q4,12,December
+ORD-2022-10128,2022-12-13,CUST-2022-0045,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,3,41.65,124.95,2022,2022-Q4,12,December
+ORD-2022-10143,2022-12-13,CUST-2022-0122,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,7,11.9,83.3,2022,2022-Q4,12,December
+ORD-2022-10157,2022-12-13,CUST-2022-0169,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,Japan,1,15.3,15.3,2022,2022-Q4,12,December
+ORD-2022-10351,2022-12-13,CUST-2022-0037,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,4,17.1,68.4,2022,2022-Q4,12,December
+ORD-2022-10400,2022-12-13,CUST-2022-0101,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,7,22.49,157.43,2022,2022-Q4,12,December
+ORD-2022-10422,2022-12-13,CUST-2022-0138,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Germany,3,26.6,79.8,2022,2022-Q4,12,December
+ORD-2022-10043,2022-12-14,CUST-2022-0150,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Germany,1,37.8,37.8,2022,2022-Q4,12,December
+ORD-2022-10084,2022-12-14,CUST-2022-0091,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Germany,2,37.8,75.6,2022,2022-Q4,12,December
+ORD-2022-10141,2022-12-14,CUST-2022-0089,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Germany,8,12.6,100.8,2022,2022-Q4,12,December
+ORD-2022-10168,2022-12-14,CUST-2022-0121,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,2,45.0,90.0,2022,2022-Q4,12,December
+ORD-2022-10486,2022-12-14,CUST-2022-0101,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,France,1,42.0,42.0,2022,2022-Q4,12,December
+ORD-2022-10626,2022-12-14,CUST-2022-0033,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Netherlands,3,14.0,42.0,2022,2022-Q4,12,December
+ORD-2022-10028,2022-12-15,CUST-2022-0016,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Netherlands,2,36.1,72.2,2022,2022-Q4,12,December
+ORD-2022-10183,2022-12-15,CUST-2022-0158,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,12,December
+ORD-2022-10409,2022-12-15,CUST-2022-0076,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,1,21.24,21.24,2022,2022-Q4,12,December
+ORD-2022-10487,2022-12-15,CUST-2022-0061,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Japan,3,58.5,175.5,2022,2022-Q4,12,December
+ORD-2022-10042,2022-12-16,CUST-2022-0146,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,32.77,65.54,2022,2022-Q4,12,December
+ORD-2022-10125,2022-12-16,CUST-2022-0078,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,2,23.38,46.76,2022,2022-Q4,12,December
+ORD-2022-10303,2022-12-16,CUST-2022-0150,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,4,38.25,153.0,2022,2022-Q4,12,December
+ORD-2022-10334,2022-12-16,CUST-2022-0093,PROD-ELEC-105,NovaBass Bluetooth Water-Resistant Speaker,Electronics,Germany,2,42.0,84.0,2022,2022-Q4,12,December
+ORD-2022-10349,2022-12-16,CUST-2022-0113,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,3,32.77,98.31,2022,2022-Q4,12,December
+ORD-2022-10591,2022-12-16,CUST-2022-0013,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Australia,3,89.99,269.97,2022,2022-Q4,12,December
+ORD-2022-10619,2022-12-16,CUST-2022-0169,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,8,42.75,342.0,2022,2022-Q4,12,December
+ORD-2022-10159,2022-12-17,CUST-2022-0091,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,4,42.75,171.0,2022,2022-Q4,12,December
+ORD-2022-10385,2022-12-17,CUST-2022-0116,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,1,38.25,38.25,2022,2022-Q4,12,December
+ORD-2022-10553,2022-12-17,CUST-2022-0105,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,29.32,58.64,2022,2022-Q4,12,December
+ORD-2022-10269,2022-12-18,CUST-2022-0019,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,4,23.38,93.52,2022,2022-Q4,12,December
+ORD-2022-10274,2022-12-18,CUST-2022-0123,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,2,76.49,152.98,2022,2022-Q4,12,December
+ORD-2022-10420,2022-12-18,CUST-2022-0079,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,34.5,69.0,2022,2022-Q4,12,December
+ORD-2022-10645,2022-12-18,CUST-2022-0082,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,6,26.12,156.72,2022,2022-Q4,12,December
+ORD-2022-10067,2022-12-19,CUST-2022-0171,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,5,19.12,95.6,2022,2022-Q4,12,December
+ORD-2022-10169,2022-12-19,CUST-2022-0119,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,France,2,28.8,57.6,2022,2022-Q4,12,December
+ORD-2022-10246,2022-12-19,CUST-2022-0128,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Australia,2,16.5,33.0,2022,2022-Q4,12,December
+ORD-2022-10424,2022-12-19,CUST-2022-0050,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,41.65,41.65,2022,2022-Q4,12,December
+ORD-2022-10149,2022-12-20,CUST-2022-0026,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Germany,2,32.0,64.0,2022,2022-Q4,12,December
+ORD-2022-10161,2022-12-20,CUST-2022-0009,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Netherlands,2,80.99,161.98,2022,2022-Q4,12,December
+ORD-2022-10247,2022-12-20,CUST-2022-0158,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Germany,5,26.55,132.75,2022,2022-Q4,12,December
+ORD-2022-10283,2022-12-20,CUST-2022-0176,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,8,15.3,122.4,2022,2022-Q4,12,December
+ORD-2022-10353,2022-12-20,CUST-2022-0165,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Japan,1,23.8,23.8,2022,2022-Q4,12,December
+ORD-2022-10415,2022-12-20,CUST-2022-0158,PROD-HOME-202,Smart Aroma Diffuser & Humidifier,Home & Living,Germany,7,28.02,196.14,2022,2022-Q4,12,December
+ORD-2022-10437,2022-12-20,CUST-2022-0024,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,8,23.8,190.4,2022,2022-Q4,12,December
+ORD-2022-10001,2022-12-21,CUST-2022-0058,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,United Kingdom,3,85.49,256.47,2022,2022-Q4,12,December
+ORD-2022-10160,2022-12-21,CUST-2022-0169,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,France,5,52.25,261.25,2022,2022-Q4,12,December
+ORD-2022-10372,2022-12-21,CUST-2022-0142,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,1,23.8,23.8,2022,2022-Q4,12,December
+ORD-2022-10518,2022-12-21,CUST-2022-0144,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,3,40.5,121.5,2022,2022-Q4,12,December
+ORD-2022-10535,2022-12-21,CUST-2022-0079,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Australia,8,19.12,152.96,2022,2022-Q4,12,December
+ORD-2022-10558,2022-12-21,CUST-2022-0153,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,1,76.49,76.49,2022,2022-Q4,12,December
+ORD-2022-10567,2022-12-21,CUST-2022-0167,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,France,5,16.2,81.0,2022,2022-Q4,12,December
+ORD-2022-10582,2022-12-21,CUST-2022-0099,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Japan,7,28.0,196.0,2022,2022-Q4,12,December
+ORD-2022-10088,2022-12-22,CUST-2022-0067,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,8,11.9,95.2,2022,2022-Q4,12,December
+ORD-2022-10124,2022-12-22,CUST-2022-0043,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,3,22.49,67.47,2022,2022-Q4,12,December
+ORD-2022-10237,2022-12-22,CUST-2022-0133,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,2,45.0,90.0,2022,2022-Q4,12,December
+ORD-2022-10325,2022-12-22,CUST-2022-0076,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Netherlands,1,30.4,30.4,2022,2022-Q4,12,December
+ORD-2022-10452,2022-12-22,CUST-2022-0043,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,France,1,32.3,32.3,2022,2022-Q4,12,December
+ORD-2022-10499,2022-12-22,CUST-2022-0085,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United States,2,14.0,28.0,2022,2022-Q4,12,December
+ORD-2022-10505,2022-12-22,CUST-2022-0092,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,Japan,1,46.75,46.75,2022,2022-Q4,12,December
+ORD-2022-10614,2022-12-22,CUST-2022-0114,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United Kingdom,4,23.8,95.2,2022,2022-Q4,12,December
+ORD-2022-10650,2022-12-22,CUST-2022-0030,PROD-HOME-201,Nordic Minimalist Ceramic Lamp,Home & Living,Germany,6,32.3,193.8,2022,2022-Q4,12,December
+ORD-2022-10071,2022-12-23,CUST-2022-0055,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,8,23.38,187.04,2022,2022-Q4,12,December
+ORD-2022-10170,2022-12-23,CUST-2022-0010,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,3,14.85,44.55,2022,2022-Q4,12,December
+ORD-2022-10188,2022-12-23,CUST-2022-0106,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United States,8,17.95,143.6,2022,2022-Q4,12,December
+ORD-2022-10282,2022-12-23,CUST-2022-0008,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,France,7,46.75,327.25,2022,2022-Q4,12,December
+ORD-2022-10293,2022-12-23,CUST-2022-0111,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Australia,1,42.75,42.75,2022,2022-Q4,12,December
+ORD-2022-10320,2022-12-23,CUST-2022-0045,PROD-HOME-205,Bamboo Fiber Luxury Bed Sheet Set,Home & Living,United States,1,46.75,46.75,2022,2022-Q4,12,December
+ORD-2022-10430,2022-12-23,CUST-2022-0090,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Germany,1,24.99,24.99,2022,2022-Q4,12,December
+ORD-2022-10616,2022-12-23,CUST-2022-0143,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,2,89.99,179.98,2022,2022-Q4,12,December
+ORD-2022-10009,2022-12-24,CUST-2022-0026,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Australia,2,21.24,42.48,2022,2022-Q4,12,December
+ORD-2022-10039,2022-12-24,CUST-2022-0015,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,4,14.0,56.0,2022,2022-Q4,12,December
+ORD-2022-10098,2022-12-24,CUST-2022-0108,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United Kingdom,6,19.12,114.72,2022,2022-Q4,12,December
+ORD-2022-10132,2022-12-24,CUST-2022-0065,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,8,14.85,118.8,2022,2022-Q4,12,December
+ORD-2022-10184,2022-12-24,CUST-2022-0123,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,1,23.38,23.38,2022,2022-Q4,12,December
+ORD-2022-10387,2022-12-24,CUST-2022-0019,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Netherlands,5,16.5,82.5,2022,2022-Q4,12,December
+ORD-2022-10011,2022-12-25,CUST-2022-0063,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,3,21.38,64.14,2022,2022-Q4,12,December
+ORD-2022-10030,2022-12-25,CUST-2022-0147,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,Netherlands,3,11.9,35.7,2022,2022-Q4,12,December
+ORD-2022-10045,2022-12-25,CUST-2022-0019,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United States,6,27.5,165.0,2022,2022-Q4,12,December
+ORD-2022-10154,2022-12-25,CUST-2022-0041,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,France,2,65.0,130.0,2022,2022-Q4,12,December
+ORD-2022-10263,2022-12-25,CUST-2022-0037,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Japan,3,38.25,114.75,2022,2022-Q4,12,December
+ORD-2022-10418,2022-12-25,CUST-2022-0151,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,France,7,45.0,315.0,2022,2022-Q4,12,December
+ORD-2022-10598,2022-12-25,CUST-2022-0039,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,France,3,89.99,269.97,2022,2022-Q4,12,December
+ORD-2022-10166,2022-12-26,CUST-2022-0004,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,Netherlands,2,40.5,81.0,2022,2022-Q4,12,December
+ORD-2022-10224,2022-12-26,CUST-2022-0143,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,United Kingdom,1,41.65,41.65,2022,2022-Q4,12,December
+ORD-2022-10235,2022-12-26,CUST-2022-0129,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Netherlands,5,23.8,119.0,2022,2022-Q4,12,December
+ORD-2022-10302,2022-12-26,CUST-2022-0177,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,12,December
+ORD-2022-10312,2022-12-26,CUST-2022-0038,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,Japan,6,25.2,151.2,2022,2022-Q4,12,December
+ORD-2022-10383,2022-12-26,CUST-2022-0177,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Netherlands,3,27.5,82.5,2022,2022-Q4,12,December
+ORD-2022-10633,2022-12-26,CUST-2022-0007,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Germany,1,23.38,23.38,2022,2022-Q4,12,December
+ORD-2022-10018,2022-12-27,CUST-2022-0120,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,Germany,7,14.85,103.95,2022,2022-Q4,12,December
+ORD-2022-10066,2022-12-27,CUST-2022-0171,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,United Kingdom,7,22.49,157.43,2022,2022-Q4,12,December
+ORD-2022-10116,2022-12-27,CUST-2022-0078,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Australia,1,34.5,34.5,2022,2022-Q4,12,December
+ORD-2022-10276,2022-12-27,CUST-2022-0034,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Netherlands,3,27.2,81.6,2022,2022-Q4,12,December
+ORD-2022-10309,2022-12-27,CUST-2022-0072,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,Japan,4,24.75,99.0,2022,2022-Q4,12,December
+ORD-2022-10331,2022-12-27,CUST-2022-0057,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,Germany,5,21.38,106.9,2022,2022-Q4,12,December
+ORD-2022-10541,2022-12-27,CUST-2022-0102,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,United Kingdom,8,14.0,112.0,2022,2022-Q4,12,December
+ORD-2022-10608,2022-12-27,CUST-2022-0106,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,8,16.96,135.68,2022,2022-Q4,12,December
+ORD-2022-10631,2022-12-27,CUST-2022-0178,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Germany,3,28.8,86.4,2022,2022-Q4,12,December
+ORD-2022-10641,2022-12-27,CUST-2022-0031,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,Netherlands,1,29.32,29.32,2022,2022-Q4,12,December
+ORD-2022-10450,2022-12-28,CUST-2022-0023,PROD-HOME-204,Stainless Steel Thermal Brew Travel Tumbler,Home & Living,United Kingdom,2,19.95,39.9,2022,2022-Q4,12,December
+ORD-2022-10560,2022-12-28,CUST-2022-0042,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,1,46.55,46.55,2022,2022-Q4,12,December
+ORD-2022-10585,2022-12-28,CUST-2022-0129,PROD-GIFT-303,Vintage Constellation Brass Pocket Compass,Gifts,United Kingdom,3,16.2,48.6,2022,2022-Q4,12,December
+ORD-2022-10638,2022-12-28,CUST-2022-0176,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,Germany,2,58.5,117.0,2022,2022-Q4,12,December
+ORD-2022-10004,2022-12-29,CUST-2022-0002,PROD-ACC-402,Waterproof Tech Accessory Cable Organizer,Accessories,France,8,13.3,106.4,2022,2022-Q4,12,December
+ORD-2022-10005,2022-12-29,CUST-2022-0087,PROD-ACC-403,Polarized Lightweight Titanium Sunglasses,Accessories,United Kingdom,5,45.0,225.0,2022,2022-Q4,12,December
+ORD-2022-10546,2022-12-29,CUST-2022-0146,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,7,16.5,115.5,2022,2022-Q4,12,December
+ORD-2022-10621,2022-12-29,CUST-2022-0105,PROD-ELEC-101,NovaSonic Wireless ANC Headphones,Electronics,Germany,1,89.99,89.99,2022,2022-Q4,12,December
+ORD-2022-10048,2022-12-30,CUST-2022-0027,PROD-GIFT-301,Executive Handcrafted Leather Journal,Gifts,United States,5,21.38,106.9,2022,2022-Q4,12,December
+ORD-2022-10243,2022-12-30,CUST-2022-0005,PROD-ACC-404,Genuine Italian Leather Dress Belt,Accessories,United States,1,25.2,25.2,2022,2022-Q4,12,December
+ORD-2022-10524,2022-12-30,CUST-2022-0064,PROD-GIFT-304,Luxury Scented Soy Candle Holiday Trio,Gifts,United Kingdom,1,27.5,27.5,2022,2022-Q4,12,December
+ORD-2022-10557,2022-12-30,CUST-2022-0130,PROD-HOME-203,Ergonomic Memory Foam Lumbar Support,Home & Living,Australia,6,21.24,127.44,2022,2022-Q4,12,December
+ORD-2022-10632,2022-12-30,CUST-2022-0147,PROD-ELEC-103,NovaVision 4K Ultra HD Streaming Stick,Electronics,Germany,3,41.65,124.95,2022,2022-Q4,12,December
+ORD-2022-10014,2022-12-31,CUST-2022-0165,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,Germany,8,27.2,217.6,2022,2022-Q4,12,December
+ORD-2022-10095,2022-12-31,CUST-2022-0007,PROD-ELEC-102,NovaCharge 65W GaN Multi-Port Hub,Electronics,United Kingdom,2,31.05,62.1,2022,2022-Q4,12,December
+ORD-2022-10242,2022-12-31,CUST-2022-0121,PROD-GIFT-302,Gourmet Artisan Tea Selection Gift Box,Gifts,United Kingdom,3,30.4,91.2,2022,2022-Q4,12,December
+ORD-2022-10382,2022-12-31,CUST-2022-0062,PROD-ACC-401,RFID-Blocking Slim Carbon Fiber Cardholder,Accessories,United Kingdom,5,14.03,70.15,2022,2022-Q4,12,December
+ORD-2022-10590,2022-12-31,CUST-2022-0137,PROD-ELEC-104,NovaFit Smart Fitness Tracker v3,Electronics,United Kingdom,3,65.0,195.0,2022,2022-Q4,12,December
