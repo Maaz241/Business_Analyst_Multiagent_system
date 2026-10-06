@@ -2,7 +2,7 @@
 
 ### Autonomous Multi-Agent Executive Analytics Platform
 
-> **Hackathon-Winning** enterprise-grade AI Business Analyst that coordinates 5 specialist agents to answer complex business questions with deterministic arithmetic, evidence-backed citations, and Critic-validated insights.
+> **Hackathon-Winning** enterprise-grade AI Business Analyst that coordinates 5 specialist agents to answer complex business questions with deterministic arithmetic, evidence-backed citations, and Critic validated insights.
 
 ---
 
